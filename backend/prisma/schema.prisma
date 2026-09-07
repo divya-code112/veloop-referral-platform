@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           Int     @id @default(autoincrement())
+  name         String?
+  email        String  @unique
+  password     String
+  referralCode String  @unique
+  referredById Int?
+
+  xp    Int @default(0)
+  level Int @default(1)
+
+  currentStreak Int       @default(0)
+  longestStreak Int       @default(0)
+  lastCheckIn   DateTime?
+
+  // Wallet balances
+  gems       Int @default(0)
+  sve        Int @default(0)
+  tokens     Int @default(0)
+  luckySpins Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  referredBy       User?            @relation("UserReferrals", fields: [referredById], references: [id])
+  referrals        User[]           @relation("UserReferrals")
+  sentReferrals    Referral[]       @relation("Referrer")
+  receivedReferral Referral?        @relation("ReferredUser")
+  rewards          RewardClaim[]
+  taskCompletions  TaskCompletion[]
+}
+
+model Referral {
+  id             Int            @id @default(autoincrement())
+  referrerId     Int
+  referredUserId Int            @unique
+  status         ReferralStatus @default(PENDING)
+  taskCount      Int            @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  referrer     User          @relation("Referrer", fields: [referrerId], references: [id])
+  referredUser User          @relation("ReferredUser", fields: [referredUserId], references: [id])
+  rewardClaims RewardClaim[]
+}
+
+model Reward {
+  id Int @id @default(autoincrement())
+
+  title         String
+  subtitle      String?
+  condition     String
+  requiredTasks Int     @default(0)
+
+  // Reward values
+  sve        Int @default(0)
+  gems       Int @default(0)
+  tokens     Int @default(0)
+  luckySpins Int @default(0)
+
+  createdAt DateTime @default(now())
+
+  claims RewardClaim[]
+}
+
+model RewardClaim {
+  id         Int  @id @default(autoincrement())
+  userId     Int
+  referralId Int?
+  rewardId   Int
+
+  status    RewardClaimStatus @default(LOCKED)
+  claimedAt DateTime?
+  createdAt DateTime          @default(now())
+
+  user     User      @relation(fields: [userId], references: [id])
+  referral Referral? @relation(fields: [referralId], references: [id])
+  reward   Reward    @relation(fields: [rewardId], references: [id])
+
+  @@unique([userId, referralId, rewardId])
+  @@index([userId])
+  @@index([rewardId])
+}
+
+enum ReferralStatus {
+  PENDING
+  SUCCESSFUL
+  CANCELLED
+}
+
+enum RewardClaimStatus {
+  LOCKED
+  UNLOCKED
+  CLAIMED
+}
+
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  type        TaskType
+
+  difficulty TaskDifficulty @default(EASY)
+  xpReward   Int            @default(10)
+  repeatable Boolean        @default(false)
+  active     Boolean        @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  completions TaskCompletion[]
+}
+
+model TaskCompletion {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  taskId      Int
+  xpEarned    Int      @default(0)
+  completedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  task Task @relation(fields: [taskId], references: [id])
+
+  @@index([userId])
+  @@index([taskId])
+}
+
+enum TaskType {
+  WATCH_AD
+  CAPTCHA
+  QUIZ
+  DAILY_CHECKIN
+}
+
+enum TaskDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  EXPERT
+}
