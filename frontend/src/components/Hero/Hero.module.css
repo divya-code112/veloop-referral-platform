@@ -1,0 +1,1778 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 540px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding:
+    60px 55px;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d0b24 0%,
+      #12102f 45%,
+      #09091c 100%
+    );
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.2);
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.5),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.backgroundGlowOne,
+.backgroundGlowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+
+  z-index: -3;
+}
+
+
+.backgroundGlowOne {
+  width: 400px;
+  height: 400px;
+
+  top: -200px;
+  left: -180px;
+
+  background:
+    rgba(111, 63, 255, 0.3);
+}
+
+
+.backgroundGlowTwo {
+  width: 350px;
+  height: 350px;
+
+  right: -130px;
+  bottom: -150px;
+
+  background:
+    rgba(255, 145, 0, 0.14);
+}
+
+
+.gridPattern {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.3;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    38px 38px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 10%,
+      transparent 80%
+    );
+
+  z-index: -2;
+}
+
+
+.noise {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.02;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 1) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size:
+    5px 5px;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 580px;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 16px;
+
+  margin-bottom:
+    22px;
+
+  border-radius:
+    100px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 190, 50, 0.12),
+      rgba(255, 139, 0, 0.05)
+    );
+
+  border:
+    1px solid
+    rgba(255, 184, 52, 0.25);
+
+  color:
+    #ffd36a;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.02em;
+
+  box-shadow:
+    0 10px 30px
+    rgba(255, 166, 0, 0.08);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+  margin: 0;
+
+  color:
+    #f8f7ff;
+
+  font-size:
+    clamp(3.2rem, 5.5vw, 5.3rem);
+
+  line-height:
+    1.03;
+
+  letter-spacing:
+    -0.055em;
+
+  font-weight:
+    800;
+}
+
+
+.title span {
+  display: block;
+
+  margin-top:
+    8px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffd86b,
+      #ff9f0a 40%,
+      #b77cff 75%,
+      #ffd86b
+    );
+
+  background-size:
+    250% auto;
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  animation:
+    gradientShift
+    6s
+    linear
+    infinite;
+}
+
+
+@keyframes gradientShift {
+
+  0% {
+    background-position:
+      0% center;
+  }
+
+  100% {
+    background-position:
+      250% center;
+  }
+
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+  max-width:
+    520px;
+
+  margin:
+    24px 0 30px;
+
+  color:
+    rgba(225, 224, 240, 0.72);
+
+  font-size:
+    1.05rem;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================
+   REWARD STATS
+========================================= */
+
+.rewardStats {
+  display: flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding:
+    18px 24px;
+
+  margin-bottom:
+    30px;
+
+  border-radius:
+    20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.2),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.rewardStat {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    13px;
+}
+
+
+.statCoin,
+.statUsers {
+  width:
+    50px;
+
+  height:
+    50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    15px;
+}
+
+
+.statCoin {
+  background:
+    linear-gradient(
+      135deg,
+      #ffe06e,
+      #f59e0b
+    );
+
+  color:
+    #7a4300;
+
+  box-shadow:
+    0 10px 25px
+    rgba(245, 158, 11, 0.25);
+}
+
+
+.statUsers {
+  background:
+    linear-gradient(
+      135deg,
+      #7656ff,
+      #b149ff
+    );
+
+  color:
+    white;
+
+  box-shadow:
+    0 10px 25px
+    rgba(124, 58, 237, 0.3);
+}
+
+
+.rewardStat strong {
+  display: block;
+
+  color:
+    white;
+
+  font-size:
+    1.3rem;
+
+  line-height:
+    1.1;
+}
+
+
+.rewardStat span {
+  display: block;
+
+  max-width:
+    125px;
+
+  margin-top:
+    5px;
+
+  color:
+    rgba(220, 220, 235, 0.58);
+
+  font-size:
+    0.72rem;
+
+  line-height:
+    1.4;
+}
+
+
+.statDivider {
+  width:
+    1px;
+
+  height:
+    58px;
+
+  margin:
+    0 24px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap:
+    14px;
+}
+
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    10px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-weight:
+    700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.primaryButton {
+  min-width:
+    220px;
+
+  padding:
+    16px 20px;
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #ffbf22,
+      #ff8a00 48%,
+      #8b3dff
+    );
+
+  color:
+    white;
+
+  font-size:
+    0.96rem;
+
+  box-shadow:
+    0 14px 35px
+    rgba(130, 70, 255, 0.3);
+}
+
+
+.primaryButton span {
+  flex:
+    1;
+
+  text-align:
+    left;
+}
+
+
+.primaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 22px 45px
+    rgba(124, 58, 237, 0.42);
+}
+
+
+.secondaryButton {
+  min-width:
+    175px;
+
+  padding:
+    16px 20px;
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  color:
+    rgba(245, 245, 255, 0.88);
+}
+
+
+.secondaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   TRUST TEXT
+========================================= */
+
+.trustText {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    8px;
+
+  margin:
+    20px 0 0;
+
+  color:
+    rgba(210, 210, 225, 0.45);
+
+  font-size:
+    0.78rem;
+}
+
+
+.trustDot {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #4ade80;
+
+  box-shadow:
+    0 0 12px
+    rgba(74, 222, 128, 0.7);
+}
+
+
+/* =========================================
+   RIGHT VISUAL
+========================================= */
+
+.visualWrapper {
+  position: relative;
+
+  min-height:
+    440px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index:
+    2;
+}
+
+
+.visualGlow {
+  position: absolute;
+
+  width:
+    360px;
+
+  height:
+    360px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(123, 58, 237, 0.35),
+      rgba(255, 153, 0, 0.08),
+      transparent 70%
+    );
+
+  filter:
+    blur(30px);
+}
+
+
+.visualGlowSecondary {
+  position: absolute;
+
+  width:
+    220px;
+
+  height:
+    220px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255, 170, 0, 0.12);
+
+  filter:
+    blur(70px);
+
+  bottom:
+    40px;
+
+  right:
+    40px;
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.orbit {
+  position: absolute;
+
+  width:
+    350px;
+
+  height:
+    130px;
+
+  bottom:
+    35px;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.45);
+
+  border-radius:
+    50%;
+
+  transform:
+    rotate(-6deg);
+
+  box-shadow:
+    0 0 40px
+    rgba(124, 58, 237, 0.18),
+    inset 0 0 25px
+    rgba(124, 58, 237, 0.08);
+}
+
+
+.orbitSmall {
+  position: absolute;
+
+  width:
+    270px;
+
+  height:
+    85px;
+
+  bottom:
+    58px;
+
+  border:
+    1px solid
+    rgba(255, 180, 40, 0.2);
+
+  border-radius:
+    50%;
+
+  transform:
+    rotate(8deg);
+}
+
+
+.orbitDotOne,
+.orbitDotTwo {
+  position: absolute;
+
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border-radius:
+    50%;
+}
+
+
+.orbitDotOne {
+  right:
+    60px;
+
+  bottom:
+    95px;
+
+  background:
+    #ffb000;
+
+  box-shadow:
+    0 0 15px
+    #ffb000;
+}
+
+
+.orbitDotTwo {
+  left:
+    55px;
+
+  bottom:
+    75px;
+
+  background:
+    #9b6cff;
+
+  box-shadow:
+    0 0 15px
+    #9b6cff;
+}
+
+
+/* =========================================
+   FLOATING REWARD CARD
+========================================= */
+
+.rewardFloatingCard {
+  position: absolute;
+
+  top:
+    45px;
+
+  right:
+    10px;
+
+  z-index:
+    10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    10px;
+
+  padding:
+    12px 15px;
+
+  border-radius:
+    16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 26, 70, 0.9),
+      rgba(18, 16, 48, 0.85)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter:
+    blur(15px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+.rewardFloatingIcon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffca45,
+      #f59e0b
+    );
+
+  color:
+    #7a4300;
+}
+
+
+.rewardFloatingCard span {
+  display: block;
+
+  color:
+    rgba(230, 230, 240, 0.55);
+
+  font-size:
+    0.65rem;
+}
+
+
+.rewardFloatingCard strong {
+  display: block;
+
+  margin-top:
+    3px;
+
+  color:
+    white;
+
+  font-size:
+    0.9rem;
+}
+
+
+/* =========================================
+   GIFT SCENE
+========================================= */
+
+.giftScene {
+  position: relative;
+
+  width:
+    280px;
+
+  height:
+    300px;
+
+  z-index:
+    5;
+}
+
+
+.giftShadow {
+  position: absolute;
+
+  width:
+    210px;
+
+  height:
+    40px;
+
+  left:
+    50%;
+
+  bottom:
+    5px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(0, 0, 0, 0.45);
+
+  filter:
+    blur(18px);
+}
+
+
+/* =========================================
+   GIFT BOX
+========================================= */
+
+.giftBox {
+  position: absolute;
+
+  bottom:
+    28px;
+
+  left:
+    50%;
+
+  width:
+    220px;
+
+  height:
+    165px;
+
+  transform:
+    translateX(-50%);
+
+  perspective:
+    700px;
+}
+
+
+.boxFront {
+  position: absolute;
+
+  bottom:
+    0;
+
+  width:
+    220px;
+
+  height:
+    125px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    12px 12px 22px 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5521a5,
+      #7135d8 45%,
+      #321060
+    );
+
+  border:
+    1px solid
+    rgba(195, 125, 255, 0.5);
+
+  box-shadow:
+    0 25px 55px
+    rgba(73, 20, 150, 0.5),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.boxHighlight {
+  position: absolute;
+
+  top:
+    0;
+
+  left:
+    20px;
+
+  width:
+    70px;
+
+  height:
+    100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform:
+    skewX(-18deg);
+}
+
+
+.boxSide {
+  position: absolute;
+
+  right:
+    -32px;
+
+  bottom:
+    2px;
+
+  width:
+    48px;
+
+  height:
+    118px;
+
+  transform:
+    skewY(-25deg);
+
+  border-radius:
+    0 10px 12px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #2d115f,
+      #130525
+    );
+
+  border:
+    1px solid
+    rgba(154, 90, 255, 0.3);
+}
+
+
+.boxTop {
+  position: absolute;
+
+  top:
+    17px;
+
+  left:
+    10px;
+
+  width:
+    210px;
+
+  height:
+    58px;
+
+  transform:
+    skewX(-18deg);
+
+  border-radius:
+    13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8a4df5,
+      #5420a5
+    );
+
+  border:
+    1px solid
+    rgba(220, 170, 255, 0.35);
+
+  box-shadow:
+    inset 0 8px 20px
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   RIBBONS
+========================================= */
+
+.ribbonVertical {
+  position: absolute;
+
+  left:
+    92px;
+
+  bottom:
+    0;
+
+  width:
+    36px;
+
+  height:
+    150px;
+
+  z-index:
+    4;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff8800,
+      #ffe083,
+      #ff8a00
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(255, 166, 0, 0.35);
+}
+
+
+.ribbonHorizontal {
+  position: absolute;
+
+  top:
+    47px;
+
+  left:
+    -2px;
+
+  width:
+    224px;
+
+  height:
+    31px;
+
+  z-index:
+    5;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffe37d,
+      #ff9700
+    );
+
+  border-radius:
+    5px;
+
+  box-shadow:
+    0 0 20px
+    rgba(255, 166, 0, 0.28);
+}
+
+
+.ribbonBowLeft,
+.ribbonBowRight {
+  position: absolute;
+
+  top:
+    20px;
+
+  width:
+    58px;
+
+  height:
+    35px;
+
+  z-index:
+    6;
+
+  border:
+    8px solid
+    #ffc84d;
+
+  border-radius:
+    50%;
+
+  box-shadow:
+    0 0 16px
+    rgba(255, 180, 0, 0.3);
+}
+
+
+.ribbonBowLeft {
+  left:
+    55px;
+
+  transform:
+    rotate(-28deg);
+}
+
+
+.ribbonBowRight {
+  right:
+    50px;
+
+  transform:
+    rotate(28deg);
+}
+
+
+/* =========================================
+   MAIN COIN
+========================================= */
+
+.mainCoin {
+  position: absolute;
+
+  top:
+    -5px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    150px;
+
+  height:
+    150px;
+
+  padding:
+    10px;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff6bf,
+      #ffc536,
+      #e47d00
+    );
+
+  box-shadow:
+    0 0 0 6px
+    rgba(255, 220, 110, 0.12),
+    0 20px 50px
+    rgba(255, 157, 0, 0.42),
+    inset 0 0 18px
+    rgba(255, 255, 255, 0.55);
+
+  z-index:
+    8;
+}
+
+
+.mainCoinInner {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    50%;
+
+  border:
+    2px solid
+    rgba(255, 245, 200, 0.8);
+
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      #fff1a0,
+      #f5a300 68%
+    );
+
+  box-shadow:
+    inset 0 5px 12px
+    rgba(255, 255, 255, 0.35);
+}
+
+
+.mainCoinInner span {
+  color:
+    #7d4500;
+
+  font-size:
+    2.5rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    -0.1em;
+
+  text-shadow:
+    0 2px 0
+    rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================
+   SMALL COINS
+========================================= */
+
+.smallCoin,
+.coin {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4b5,
+      #ffb21e,
+      #d97706
+    );
+
+  border:
+    2px solid
+    rgba(255, 241, 186, 0.8);
+
+  color:
+    #814700;
+
+  font-weight:
+    900;
+
+  box-shadow:
+    0 12px 28px
+    rgba(255, 166, 0, 0.3);
+}
+
+
+.smallCoin {
+  width:
+    58px;
+
+  height:
+    58px;
+
+  font-size:
+    0.9rem;
+}
+
+
+.coinInner {
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================
+   FLOATING COINS
+========================================= */
+
+.floatCoinOne,
+.floatCoinTwo,
+.floatCoinThree {
+  position: absolute;
+
+  z-index:
+    9;
+}
+
+
+.floatCoinOne {
+  top:
+    70px;
+
+  left:
+    5px;
+}
+
+
+.floatCoinTwo {
+  top:
+    135px;
+
+  right:
+    -5px;
+}
+
+
+.floatCoinThree {
+  bottom:
+    85px;
+
+  left:
+    15px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confettiOne,
+.confettiTwo,
+.confettiThree,
+.confettiFour,
+.confettiFive,
+.confettiSix,
+.confettiSeven {
+  position: absolute;
+
+  z-index:
+    10;
+
+  border-radius:
+    3px;
+}
+
+
+.confettiOne {
+  top: 45px;
+  left: 110px;
+
+  width: 8px;
+  height: 18px;
+
+  background: #e879f9;
+
+  transform: rotate(35deg);
+}
+
+
+.confettiTwo {
+  top: 90px;
+  right: 75px;
+
+  width: 9px;
+  height: 16px;
+
+  background: #fb923c;
+
+  transform: rotate(45deg);
+}
+
+
+.confettiThree {
+  top: 155px;
+  right: 30px;
+
+  width: 8px;
+  height: 14px;
+
+  background: #818cf8;
+
+  transform: rotate(20deg);
+}
+
+
+.confettiFour {
+  bottom: 125px;
+  left: 60px;
+
+  width: 9px;
+  height: 16px;
+
+  background: #fbbf24;
+
+  transform: rotate(50deg);
+}
+
+
+.confettiFive {
+  bottom: 60px;
+  right: 65px;
+
+  width: 8px;
+  height: 15px;
+
+  background: #c084fc;
+
+  transform: rotate(-30deg);
+}
+
+
+.confettiSix {
+  top: 115px;
+  left: 90px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #fde047;
+}
+
+
+.confettiSeven {
+  bottom: 150px;
+  right: 100px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #f472b6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    padding:
+      50px 40px;
+
+    gap:
+      25px;
+  }
+
+
+  .visualWrapper {
+    transform:
+      scale(0.9);
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .hero {
+    grid-template-columns:
+      1fr;
+
+    text-align:
+      center;
+
+    padding:
+      55px 30px 25px;
+  }
+
+
+  .content {
+    margin:
+      0 auto;
+
+    max-width:
+      650px;
+  }
+
+
+  .rewardStats {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+
+  .actions {
+    justify-content:
+      center;
+  }
+
+
+  .trustText {
+    justify-content:
+      center;
+  }
+
+
+  .visualWrapper {
+    min-height:
+      380px;
+
+    transform:
+      scale(0.9);
+  }
+
+
+  .rewardFloatingCard {
+    right:
+      10%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height:
+      auto;
+
+    padding:
+      42px 18px 15px;
+
+    border-radius:
+      22px;
+  }
+
+
+  .badge {
+    font-size:
+      0.68rem;
+  }
+
+
+  .title {
+    font-size:
+      clamp(3rem, 14vw, 4rem);
+  }
+
+
+  .subtitle {
+    font-size:
+      0.94rem;
+
+    line-height:
+      1.65;
+  }
+
+
+  .rewardStats {
+    width:
+      100%;
+
+    justify-content:
+      center;
+
+    padding:
+      16px 12px;
+  }
+
+
+  .statDivider {
+    margin:
+      0 12px;
+  }
+
+
+  .rewardStat {
+    gap:
+      9px;
+  }
+
+
+  .statCoin,
+  .statUsers {
+    width:
+      43px;
+
+    height:
+      43px;
+  }
+
+
+  .rewardStat strong {
+    font-size:
+      1.05rem;
+  }
+
+
+  .rewardStat span {
+    font-size:
+      0.62rem;
+  }
+
+
+  .actions {
+    flex-direction:
+      column;
+
+    width:
+      100%;
+  }
+
+
+  .primaryButton,
+  .secondaryButton {
+    width:
+      100%;
+  }
+
+
+  .visualWrapper {
+    min-height:
+      320px;
+
+    transform:
+      scale(0.74);
+
+    margin:
+      -35px 0;
+  }
+
+
+  .rewardFloatingCard {
+    right:
+      -10px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .rewardStats {
+    flex-direction:
+      column;
+
+    gap:
+      14px;
+  }
+
+
+  .statDivider {
+    width:
+      80px;
+
+    height:
+      1px;
+
+    margin:
+      0;
+  }
+
+
+  .visualWrapper {
+    transform:
+      scale(0.65);
+
+    margin:
+      -55px 0;
+  }
+
+}

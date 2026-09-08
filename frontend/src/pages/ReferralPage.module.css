@@ -1,0 +1,536 @@
+/* ============================================
+   REFERRAL PAGE
+============================================ */
+
+.page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #070914 0%,
+      #080a15 35%,
+      #060811 70%,
+      #050711 100%
+    );
+
+  overflow-x: hidden;
+}
+
+
+/* ============================================
+   MAIN
+============================================ */
+
+.main {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top:
+    calc(var(--header-height) + 32px);
+
+  /*
+    Extra space for fixed BottomNavigation
+  */
+
+  padding-bottom:
+    140px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* ============================================
+   MAIN CONTENT CONTAINER
+============================================ */
+
+.container {
+  position: relative;
+
+  width:
+    min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  z-index: 2;
+}
+
+
+/* ============================================
+   PREMIUM BACKGROUND GLOW
+============================================ */
+
+.backgroundGlow {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 100%;
+  height: 900px;
+
+  transform:
+    translateX(-50%);
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(112, 72, 255, 0.16),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at 12% 25%,
+      rgba(0, 217, 181, 0.07),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 88% 30%,
+      rgba(139, 92, 246, 0.1),
+      transparent 28%
+    );
+}
+
+
+/* ============================================
+   SECONDARY BACKGROUND GLOW
+============================================ */
+
+.backgroundGlowSecondary {
+  position: absolute;
+
+  top: 20%;
+  left: 0;
+
+  width: 100%;
+  height: 1400px;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(108, 92, 231, 0.08),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(0, 217, 181, 0.05),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(108, 92, 231, 0.07),
+      transparent 32%
+    );
+}
+
+
+/* ============================================
+   BACKGROUND GRID
+============================================ */
+
+.backgroundGrid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  opacity: 0.18;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    54px 54px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+/* ============================================
+   SUBTLE NOISE / TEXTURE
+============================================ */
+
+.noiseOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  opacity: 0.2;
+
+  background-image:
+
+    radial-gradient(
+      rgba(255, 255, 255, 0.035) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size:
+    5px 5px;
+
+  mix-blend-mode:
+    soft-light;
+}
+
+
+/* ============================================
+   SECTION BASE
+============================================ */
+
+.container section {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* ============================================
+   HERO SECTION
+============================================ */
+
+.heroSection {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+
+/* ============================================
+   REFERRAL SECTION
+============================================ */
+
+.referralSection {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+
+/* ============================================
+   STATISTICS
+============================================ */
+
+.statsWrapper {
+  position: relative;
+
+  margin-top: 22px;
+}
+
+
+/* ============================================
+   REFERRAL PROGRESS
+============================================ */
+
+.progressWrapper {
+  position: relative;
+
+  margin-top: 24px;
+}
+
+
+/* ============================================
+   REFERRAL JOURNEY
+============================================ */
+
+.journeyWrapper {
+  position: relative;
+
+  margin-top: 28px;
+}
+
+
+/* ============================================
+   REWARDS
+============================================ */
+
+.rewardsWrapper {
+  position: relative;
+
+  margin-top: 28px;
+}
+
+
+/* ============================================
+   RULES
+============================================ */
+
+.rulesWrapper {
+  position: relative;
+
+  margin-top: 32px;
+}
+
+
+/* ============================================
+   FAQ
+============================================ */
+
+.faqWrapper {
+  position: relative;
+
+  margin-top: 32px;
+}
+
+
+/* ============================================
+   DESKTOP LARGE
+============================================ */
+
+@media (min-width: 1400px) {
+
+  .container {
+    width:
+      min(1240px, calc(100% - 64px));
+  }
+
+
+  .main {
+    padding-top:
+      calc(var(--header-height) + 40px);
+
+    padding-bottom:
+      150px;
+  }
+
+}
+
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 1024px) {
+
+  .container {
+    width:
+      min(920px, calc(100% - 32px));
+  }
+
+
+  .main {
+    padding-top:
+      calc(var(--header-height) + 26px);
+
+    padding-bottom:
+      130px;
+  }
+
+
+  .journeyWrapper,
+  .rewardsWrapper {
+    margin-top: 24px;
+  }
+
+
+  .rulesWrapper,
+  .faqWrapper {
+    margin-top: 28px;
+  }
+
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 768px) {
+
+  .main {
+
+    padding-top:
+      calc(var(--header-height) + 18px);
+
+    /*
+      Space for fixed BottomNavigation
+    */
+
+    padding-bottom:
+      130px;
+  }
+
+
+  .container {
+    width:
+      calc(100% - 24px);
+  }
+
+
+  .heroSection {
+    margin-bottom: 16px;
+  }
+
+
+  .referralSection {
+    margin-bottom: 16px;
+  }
+
+
+  .statsWrapper {
+    margin-top: 16px;
+  }
+
+
+  .progressWrapper {
+    margin-top: 18px;
+  }
+
+
+  .journeyWrapper {
+    margin-top: 20px;
+  }
+
+
+  .rewardsWrapper {
+    margin-top: 20px;
+  }
+
+
+  .rulesWrapper {
+    margin-top: 22px;
+  }
+
+
+  .faqWrapper {
+    margin-top: 22px;
+  }
+
+
+  .backgroundGrid {
+    background-size:
+      40px 40px;
+
+    opacity: 0.1;
+  }
+
+}
+
+
+/* ============================================
+   SMALL MOBILE
+============================================ */
+
+@media (max-width: 480px) {
+
+  .container {
+    width:
+      calc(100% - 18px);
+  }
+
+
+  .main {
+
+    padding-top:
+      calc(var(--header-height) + 14px);
+
+    padding-bottom:
+      125px;
+  }
+
+
+  .backgroundGlow {
+    height: 700px;
+  }
+
+
+  .backgroundGlowSecondary {
+    height: 1000px;
+  }
+
+
+  .journeyWrapper,
+  .rewardsWrapper {
+    margin-top: 18px;
+  }
+
+
+  .rulesWrapper,
+  .faqWrapper {
+    margin-top: 20px;
+  }
+
+}
+
+
+/* ============================================
+   VERY SMALL DEVICES
+============================================ */
+
+@media (max-width: 360px) {
+
+  .container {
+    width:
+      calc(100% - 14px);
+  }
+
+
+  .main {
+    padding-bottom:
+      120px;
+  }
+
+}
+
+
+/* ============================================
+   REDUCED MOTION
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .backgroundGlow,
+  .backgroundGlowSecondary,
+  .backgroundGrid {
+    animation: none;
+  }
+
+}

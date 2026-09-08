@@ -1,0 +1,711 @@
+/* ========================================
+   MAIN PANEL
+======================================== */
+
+.panel {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding:
+    clamp(1.5rem, 3vw, 2.2rem);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 22, 40, 0.98),
+      rgba(11, 14, 28, 0.99)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.30),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  position: relative;
+
+  z-index: 2;
+
+  margin-bottom:
+    clamp(1.4rem, 2vw, 1.8rem);
+
+  text-align: left;
+}
+
+
+.title {
+  margin: 0;
+
+  color:
+    var(--text-dark-primary);
+
+  font-family:
+    var(--font-heading);
+
+  font-size:
+    clamp(1.3rem, 2.5vw, 1.7rem);
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+.subtitle {
+  margin:
+    6px 0 0;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.84rem;
+
+  line-height:
+    1.55;
+}
+
+
+/* ========================================
+   PREMIUM STATISTICS BAR
+======================================== */
+
+.statisticsBar {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius:
+    16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 15, 32, 0.96),
+      rgba(11, 18, 36, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(100, 120, 180, 0.15);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035),
+    0 10px 25px
+    rgba(0, 0, 0, 0.16);
+}
+
+
+/* ========================================
+   INDIVIDUAL STAT
+======================================== */
+
+.statItem {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 0;
+
+  min-height:
+    150px;
+
+  padding:
+    18px 16px;
+
+  text-align: center;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.statItem:hover {
+  background:
+    rgba(255, 255, 255, 0.018);
+}
+
+
+/* ========================================
+   VERTICAL DIVIDER
+======================================== */
+
+.statItem:not(:last-child)::after {
+  content: '';
+
+  position: absolute;
+
+  top: 20%;
+
+  right: 0;
+
+  width: 1px;
+
+  height: 60%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+}
+
+
+/* ========================================
+   LARGE ICON
+======================================== */
+
+.iconWrap {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 58px;
+
+  height: 58px;
+
+  margin-bottom:
+    9px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.iconWrap svg {
+  position: relative;
+
+  z-index: 2;
+
+  width: 44px;
+
+  height: 44px;
+}
+
+
+.iconGlow {
+  position: absolute;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius:
+    50%;
+
+  filter:
+    blur(15px);
+
+  opacity:
+    0.28;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.statItem:hover .iconWrap {
+  transform:
+    translateY(-4px)
+    scale(1.05);
+}
+
+
+.statItem:hover .iconGlow {
+  opacity:
+    0.5;
+
+  transform:
+    scale(1.15);
+}
+
+
+/* ========================================
+   VALUE
+======================================== */
+
+.value {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  flex-wrap:
+    nowrap;
+
+  color:
+    var(--text-dark-primary);
+
+  font-family:
+    var(--font-heading);
+
+  font-size:
+    clamp(1.35rem, 2.5vw, 1.75rem);
+
+  font-weight:
+    800;
+
+  line-height:
+    1.1;
+
+  letter-spacing:
+    -0.03em;
+
+  white-space:
+    nowrap;
+}
+
+
+.unit {
+  margin-left:
+    4px;
+
+  font-size:
+    0.65em;
+
+  font-weight:
+    700;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.label {
+  margin-top:
+    5px;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    clamp(0.65rem, 1vw, 0.78rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    1.3;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ========================================
+   PURPLE - TOTAL REFERRALS
+======================================== */
+
+.purple .iconWrap {
+  color:
+    #a855f7;
+
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(168, 85, 247, 0.32)
+    );
+}
+
+
+.purple .iconGlow {
+  background:
+    rgba(168, 85, 247, 0.75);
+}
+
+
+/* ========================================
+   BLUE - ACTIVE REFERRALS
+======================================== */
+
+.blue .iconWrap {
+  color:
+    #38bdf8;
+
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(56, 189, 248, 0.32)
+    );
+}
+
+
+.blue .iconGlow {
+  background:
+    rgba(56, 189, 248, 0.75);
+}
+
+
+/* ========================================
+   GOLD - TOTAL VE EARNED
+======================================== */
+
+.gold .iconWrap {
+  color:
+    #fbbf24;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(251, 191, 36, 0.38)
+    );
+}
+
+
+.gold .iconGlow {
+  background:
+    rgba(251, 191, 36, 0.75);
+}
+
+
+.gold .unit {
+  color:
+    #fbbf24;
+}
+
+
+/* ========================================
+   GREEN - REWARDS EARNED
+======================================== */
+
+.green .iconWrap {
+  color:
+    #4ade80;
+
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(74, 222, 128, 0.35)
+    );
+}
+
+
+.green .iconGlow {
+  background:
+    rgba(74, 222, 128, 0.70);
+}
+
+
+/* ========================================
+   LOADING / ERROR
+======================================== */
+
+.stateCard {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height:
+    180px;
+
+  text-align: center;
+
+  border-radius:
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.loader {
+  width: 36px;
+
+  height: 36px;
+
+  margin-bottom:
+    14px;
+
+  border-radius:
+    50%;
+
+  border:
+    3px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-top-color:
+    #38bdf8;
+
+  animation:
+    spin 0.9s linear infinite;
+}
+
+
+@keyframes spin {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+.stateValue {
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    700;
+}
+
+
+.stateLabel {
+  margin-top:
+    5px;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.8rem;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .statisticsBar {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .statItem {
+    min-height:
+      145px;
+  }
+
+
+  .statItem:nth-child(2)::after {
+    display:
+      none;
+  }
+
+
+  .statItem:nth-child(-n + 2)::before {
+    content: '';
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 12%;
+
+    right: 12%;
+
+    height: 1px;
+
+    background:
+      rgba(255, 255, 255, 0.08);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .panel {
+    padding:
+      1.25rem 0.8rem;
+
+    border-radius:
+      16px;
+  }
+
+
+  .statisticsBar {
+    border-radius:
+      14px;
+  }
+
+
+  .statItem {
+    min-height:
+      130px;
+
+    padding:
+      14px 8px;
+  }
+
+
+  .iconWrap {
+    width:
+      52px;
+
+    height:
+      52px;
+
+    margin-bottom:
+      7px;
+  }
+
+
+  .iconWrap svg {
+    width:
+      38px;
+
+    height:
+      38px;
+  }
+
+
+  .iconGlow {
+    width:
+      42px;
+
+    height:
+      42px;
+  }
+
+
+  .value {
+    font-size:
+      1.25rem;
+  }
+
+
+  .label {
+    font-size:
+      0.65rem;
+
+    white-space:
+      normal;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .statItem {
+    min-height:
+      120px;
+
+    padding:
+      12px 5px;
+  }
+
+
+  .iconWrap {
+    width:
+      46px;
+
+    height:
+      46px;
+  }
+
+
+  .iconWrap svg {
+    width:
+      34px;
+
+    height:
+      34px;
+  }
+
+
+  .value {
+    font-size:
+      1.1rem;
+  }
+
+
+  .label {
+    font-size:
+      0.58rem;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .loader {
+    animation:
+      none;
+  }
+
+
+  .statItem,
+  .iconWrap,
+  .iconGlow {
+    transition:
+      none;
+  }
+
+}
