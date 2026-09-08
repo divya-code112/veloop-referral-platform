@@ -1,0 +1,1042 @@
+/* ============================================
+   PAGE
+============================================ */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(91, 53, 190, 0.16),
+      transparent 32%
+    ),
+    #050712;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+
+/* ============================================
+   MAIN
+============================================ */
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  padding-top: calc(
+    var(--header-height) + 38px
+  );
+  padding-bottom: 80px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* ============================================
+   CONTAINER
+============================================ */
+
+.container {
+  position: relative;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  z-index: 2;
+}
+
+
+/* ============================================
+   BACKGROUND GLOW
+============================================ */
+
+.backgroundGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(111, 66, 193, 0.16),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(91, 43, 190, 0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(35, 24, 105, 0.14),
+      transparent 35%
+    );
+}
+
+
+/* ============================================
+   GRID TEXTURE
+============================================ */
+
+.backgroundGrid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    48px 48px;
+}
+
+
+/* ============================================
+   REFERRAL AREA
+============================================ */
+
+.referralArea {
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 42px;
+}
+
+
+/* ============================================
+   GAMIFICATION DASHBOARD
+============================================ */
+
+.gamificationDashboard {
+  position: relative;
+
+  margin:
+    40px 0 34px;
+
+  padding:
+    30px;
+
+  border-radius:
+    26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 23, 51, 0.94),
+      rgba(12, 15, 34, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(143, 110, 255, 0.18);
+
+  box-shadow:
+    0 24px 70px
+    rgba(0, 0, 0, 0.32);
+
+  overflow: hidden;
+}
+
+
+.gamificationDashboard::before {
+  content: '';
+
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  top: -240px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(122, 74, 255, 0.18),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================
+   DASHBOARD HEADER
+============================================ */
+
+.dashboardTop {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 26px;
+}
+
+
+.dashboardHeading {
+  max-width: 640px;
+}
+
+
+.dashboardEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 10px;
+
+  color: #b487ff;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+
+.dashboardHeading h2 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(1.7rem, 3vw, 2.35rem);
+
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+
+.dashboardHeading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #9b6dff,
+      #d875ff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.dashboardHeading p {
+  margin: 0;
+
+  max-width: 560px;
+
+  color:
+    rgba(218, 221, 240, 0.68);
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+
+/* ============================================
+   TASK BUTTON
+============================================ */
+
+.taskButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: none;
+
+  padding:
+    14px 21px;
+
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #5b3df5
+    );
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px
+    rgba(104, 66, 255, 0.28);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.taskButton:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 38px
+    rgba(104, 66, 255, 0.42);
+}
+
+
+/* ============================================
+   JOURNEY GRID
+============================================ */
+
+.journeyGrid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1.15fr 0.85fr;
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+
+/* ============================================
+   LEVEL CARD
+============================================ */
+
+.levelCard {
+  position: relative;
+
+  padding: 26px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(26, 31, 65, 0.92),
+      rgba(14, 18, 43, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.levelGlow {
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  left: -80px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.24),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+.levelHeader {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.levelIcon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  color: #ffbd4a;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 181, 65, 0.18),
+      rgba(255, 126, 0, 0.08)
+    );
+
+  border:
+    1px solid
+    rgba(255, 191, 70, 0.18);
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 181, 65, 0.08);
+}
+
+
+.levelLabel {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    rgba(210, 214, 236, 0.62);
+
+  font-size: 0.76rem;
+}
+
+
+.levelHeader strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 1.28rem;
+}
+
+
+.totalXp {
+  margin-left: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding:
+    8px 12px;
+
+  border-radius: 999px;
+
+  color: #8fffe5;
+
+  background:
+    rgba(0, 217, 181, 0.09);
+
+  border:
+    1px solid
+    rgba(0, 217, 181, 0.12);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+
+/* ============================================
+   XP SECTION
+============================================ */
+
+.xpSection {
+  position: relative;
+
+  margin-top: 28px;
+}
+
+
+.xpProgressText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(220, 223, 242, 0.7);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.progressFill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #a855f7,
+      #d875ff
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(168, 85, 247, 0.65);
+}
+
+
+.nextLevel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 13px;
+
+  color: #b993ff;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+
+/* ============================================
+   MOTIVATION CARD
+============================================ */
+
+.motivationCard {
+  position: relative;
+
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 26px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(51, 25, 101, 0.86),
+      rgba(18, 26, 61, 0.95)
+    );
+
+  border:
+    1px solid
+    rgba(167, 91, 255, 0.2);
+}
+
+
+.motivationContent {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 250px;
+}
+
+
+.motivationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 13px;
+
+  color: #8ce7ff;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+
+.motivationContent h3 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 1.55rem;
+}
+
+
+.motivationContent h3 span {
+  font-size: 1.3rem;
+}
+
+
+.motivationContent p {
+  margin: 0 0 18px;
+
+  color:
+    rgba(220, 222, 240, 0.68);
+
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+
+.motivationButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.09);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.motivationButton:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.15);
+}
+
+
+/* ============================================
+   MOTIVATION VISUAL
+============================================ */
+
+.motivationVisual {
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -20px;
+  bottom: -20px;
+
+  pointer-events: none;
+}
+
+
+.orbOne,
+.orbTwo {
+  position: absolute;
+
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+
+.orbOne {
+  width: 120px;
+  height: 120px;
+
+  right: 0;
+  bottom: 10px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(137, 74, 255, 0.45),
+      transparent 70%
+    );
+}
+
+
+.orbTwo {
+  width: 90px;
+  height: 90px;
+
+  left: 10px;
+  top: 10px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 196, 255, 0.22),
+      transparent 70%
+    );
+}
+
+
+.floatingCoin {
+  position: absolute;
+
+  top: 18px;
+  right: 35px;
+
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #fff5c2;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffca57,
+      #e98b18
+    );
+
+  border:
+    3px solid
+    rgba(255, 237, 160, 0.55);
+
+  font-weight: 900;
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 174, 48, 0.45);
+}
+
+
+.rewardStack {
+  position: absolute;
+
+  right: 10px;
+  bottom: 5px;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 6px;
+}
+
+
+.rewardStack span {
+  display: block;
+
+  width: 28px;
+
+  border-radius:
+    8px 8px 3px 3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbbf24,
+      #d97706
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(251, 191, 36, 0.2);
+}
+
+
+.rewardStack span:nth-child(1) {
+  height: 38px;
+}
+
+
+.rewardStack span:nth-child(2) {
+  height: 60px;
+}
+
+
+.rewardStack span:nth-child(3) {
+  height: 82px;
+}
+
+
+/* ============================================
+   ACTIVITY STATS
+============================================ */
+
+.activityStats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 14px;
+}
+
+
+.activityCard {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 18px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.activityCard:hover {
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  border-color:
+    rgba(157, 111, 255, 0.24);
+}
+
+
+.activityCard span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    rgba(211, 214, 234, 0.62);
+
+  font-size: 0.72rem;
+}
+
+
+.activityCard strong {
+  color: #ffffff;
+
+  font-size: 1.05rem;
+}
+
+
+.activityCard strong small {
+  color:
+    rgba(211, 214, 234, 0.6);
+
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+
+/* ============================================
+   ACTIVITY ICONS
+============================================ */
+
+.activityIconPurple,
+.activityIconOrange,
+.activityIconGold {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+}
+
+
+.activityIconPurple {
+  color: #b58cff;
+
+  background:
+    rgba(139, 92, 246, 0.16);
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.14);
+}
+
+
+.activityIconOrange {
+  color: #ff9d57;
+
+  background:
+    rgba(249, 115, 22, 0.14);
+
+  border:
+    1px solid
+    rgba(249, 115, 22, 0.12);
+}
+
+
+.activityIconGold {
+  color: #ffd15c;
+
+  background:
+    rgba(245, 158, 11, 0.14);
+
+  border:
+    1px solid
+    rgba(245, 158, 11, 0.12);
+}
+
+
+/* ============================================
+   SECTION SPACING
+============================================ */
+
+/*
+  Existing components automatically follow
+  the new premium page spacing.
+*/
+
+.container > section,
+.container > div {
+  position: relative;
+}
+
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 1024px) {
+  .journeyGrid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .motivationCard {
+    min-height: 260px;
+  }
+
+  .container {
+    width:
+      min(100% - 28px, 900px);
+  }
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 768px) {
+  .main {
+    padding-top:
+      calc(var(--header-height) + 24px);
+
+    padding-bottom: 60px;
+  }
+
+  .gamificationDashboard {
+    padding: 22px;
+
+    border-radius: 22px;
+  }
+
+  .dashboardTop {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .taskButton {
+    width: 100%;
+  }
+
+  .activityStats {
+    grid-template-columns:
+      1fr;
+  }
+
+  .motivationVisual {
+    opacity: 0.7;
+  }
+}
+
+
+/* ============================================
+   SMALL MOBILE
+============================================ */
+
+@media (max-width: 480px) {
+  .container {
+    width:
+      calc(100% - 20px);
+  }
+
+  .gamificationDashboard {
+    padding: 18px;
+
+    margin-top: 30px;
+  }
+
+  .dashboardHeading h2 {
+    font-size: 1.55rem;
+  }
+
+  .levelCard,
+  .motivationCard {
+    padding: 20px;
+  }
+
+  .levelHeader {
+    flex-wrap: wrap;
+  }
+
+  .totalXp {
+    margin-left: 0;
+  }
+
+  .motivationCard {
+    min-height: 280px;
+  }
+
+  .motivationVisual {
+    right: -45px;
+
+    opacity: 0.5;
+  }
+
+  .activityCard {
+    padding: 16px;
+  }
+}

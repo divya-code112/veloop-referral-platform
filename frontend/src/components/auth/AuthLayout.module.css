@@ -1,0 +1,752 @@
+.authPage {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 110px 20px 55px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(108, 92, 231, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(0, 217, 181, 0.1),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #070910 0%,
+      #0d111b 45%,
+      #111827 100%
+    );
+}
+
+
+/* ========================================
+   GRID BACKGROUND
+======================================== */
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.3;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 20%,
+      transparent 75%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   SUBTLE NOISE
+======================================== */
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.025;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.7) 0.5px,
+      transparent 0.5px
+    );
+
+  background-size: 4px 4px;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   BACKGROUND GLOWS
+======================================== */
+
+.glowOne {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(108, 92, 231, 0.18),
+      rgba(108, 92, 231, 0.05) 45%,
+      transparent 72%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+.glowTwo {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -120px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 181, 0.1),
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+.glowThree {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  bottom: -120px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 176, 32, 0.08),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   FLOATING ICONS
+======================================== */
+
+.iconLayer {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.floatIcon {
+  position: absolute;
+
+  z-index: 1;
+
+  color: var(--accent-amber);
+
+  filter:
+    drop-shadow(
+      0 14px 30px rgba(255, 176, 32, 0.2)
+    );
+}
+
+
+.iconOne {
+  top: 14%;
+  left: 9%;
+}
+
+
+.iconTwo {
+  top: 17%;
+  right: 10%;
+
+  color: var(--accent-teal);
+
+  filter:
+    drop-shadow(
+      0 14px 30px rgba(0, 217, 181, 0.2)
+    );
+}
+
+
+.iconThree {
+  bottom: 12%;
+  left: 10%;
+
+  color: var(--accent-indigo-light);
+}
+
+
+.iconFour {
+  bottom: 15%;
+  right: 9%;
+
+  color: var(--accent-amber);
+}
+
+
+.iconFive {
+  top: 48%;
+  left: 5%;
+
+  color: var(--accent-teal);
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.authContainer {
+  position: relative;
+
+  width: 100%;
+  max-width: 480px;
+
+  z-index: 3;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-bottom: 28px;
+}
+
+
+.logoBg {
+  position: relative;
+
+  width: 56px;
+  height: 56px;
+
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.75)
+    );
+
+  box-shadow:
+    0 10px 35px rgba(108, 92, 231, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+  overflow: hidden;
+}
+
+
+.logoRing {
+  position: absolute;
+
+  inset: -2px;
+
+  border-radius: 20px;
+
+  border:
+    1px solid rgba(108, 92, 231, 0.35);
+
+  pointer-events: none;
+}
+
+
+.logoBg::before {
+  content: '';
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.9),
+      transparent
+    );
+
+  animation: logoShine 5s infinite;
+}
+
+
+.logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.brandName {
+  font-family: var(--font-heading);
+
+  font-size: 1.9rem;
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+
+.brandName span {
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.brandTagline {
+  font-size: 0.68rem;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   AUTH CARD
+======================================== */
+
+.authCard {
+  position: relative;
+
+  width: 100%;
+
+  padding: 42px;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.095),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.48),
+    0 0 80px rgba(108, 92, 231, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* Glass Reflection */
+
+.authCard::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.035),
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   CARD GLOW
+======================================== */
+
+.cardGlow {
+  position: absolute;
+
+  width: 300px;
+  height: 160px;
+
+  top: -100px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(108, 92, 231, 0.32),
+      transparent 72%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+.cardBorderGlow {
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.28),
+      transparent 35%,
+      transparent 65%,
+      rgba(0, 217, 181, 0.18)
+    );
+
+  opacity: 0.6;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.cardHeader {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+
+.titleAccent {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  margin-bottom: 17px;
+
+  border-radius: var(--radius-pill);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.13),
+      rgba(0, 217, 181, 0.07)
+    );
+
+  border:
+    1px solid rgba(108, 92, 231, 0.22);
+
+  color: var(--accent-teal);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
+
+.cardHeader h1 {
+  font-size: clamp(1.85rem, 4vw, 2.4rem);
+
+  color: var(--text-dark-primary);
+
+  letter-spacing: -0.045em;
+
+  margin-bottom: 10px;
+}
+
+
+.cardHeader p {
+  max-width: 360px;
+
+  margin: 0 auto;
+
+  color: var(--text-dark-secondary);
+
+  font-size: var(--fs-body);
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.divider {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 28px;
+}
+
+
+.divider span {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(108, 92, 231, 0.25),
+      rgba(0, 217, 181, 0.18),
+      transparent
+    );
+}
+
+
+/* ========================================
+   FORM CONTENT
+======================================== */
+
+.formContent {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes logoShine {
+
+  0% {
+    transform:
+      translateX(-140px)
+      rotate(35deg);
+  }
+
+  45% {
+    transform:
+      translateX(140px)
+      rotate(35deg);
+  }
+
+  100% {
+    transform:
+      translateX(140px)
+      rotate(35deg);
+  }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+  .iconFive {
+    display: none;
+  }
+
+  .glowTwo {
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .authPage {
+    align-items: flex-start;
+
+    padding:
+      calc(var(--header-height) + 45px)
+      16px
+      35px;
+  }
+
+  .authCard {
+    padding: 32px 20px;
+
+    border-radius: 25px;
+  }
+
+  .brand {
+    margin-bottom: 24px;
+  }
+
+  .logoBg {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+  }
+
+  .brandName {
+    font-size: 1.65rem;
+  }
+
+  .brandTagline {
+    font-size: 0.6rem;
+  }
+
+  .iconOne {
+    top: 8%;
+    left: 3%;
+  }
+
+  .iconTwo {
+    top: 12%;
+    right: 3%;
+  }
+
+  .iconThree,
+  .iconFour {
+    display: none;
+  }
+
+  .floatIcon {
+    transform: scale(0.75);
+  }
+
+  .gridBackground {
+    background-size: 34px 34px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .authCard {
+    padding: 28px 16px;
+  }
+
+  .cardHeader {
+    margin-bottom: 24px;
+  }
+
+  .titleAccent {
+    font-size: 0.62rem;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floatIcon,
+  .logoBg::before {
+    animation: none !important;
+  }
+
+}

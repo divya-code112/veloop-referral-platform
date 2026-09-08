@@ -1,0 +1,1315 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 500px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding:
+    55px
+    50px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 13, 45, 0.98),
+      rgba(10, 9, 32, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(130, 95, 255, 0.22);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.45),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.backgroundGlowOne,
+.backgroundGlowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+
+  z-index: -2;
+}
+
+
+.backgroundGlowOne {
+  width: 350px;
+  height: 350px;
+
+  top: -180px;
+  left: -150px;
+
+  background:
+    rgba(102, 61, 255, 0.22);
+}
+
+
+.backgroundGlowTwo {
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  bottom: -120px;
+
+  background:
+    rgba(255, 170, 0, 0.12);
+}
+
+
+.gridPattern {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.28;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    36px 36px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 20%,
+      transparent 80%
+    );
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 560px;
+}
+
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255, 183, 0, 0.08);
+
+  border:
+    1px solid
+    rgba(255, 183, 0, 0.22);
+
+  color:
+    #ffc54d;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.02em;
+
+  box-shadow:
+    0 8px 25px
+    rgba(255, 170, 0, 0.08);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+  margin: 0;
+
+  color:
+    #f8f8ff;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5rem
+    );
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -0.05em;
+
+  font-weight:
+    800;
+}
+
+
+.title span {
+  display: block;
+
+  margin-top: 5px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffcc4d,
+      #ff9d00,
+      #ffc94d
+    );
+
+  background-size:
+    200% auto;
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  animation:
+    goldShift
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes goldShift {
+
+  0% {
+    background-position:
+      0% center;
+  }
+
+  100% {
+    background-position:
+      200% center;
+  }
+
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+  max-width:
+    500px;
+
+  margin:
+    22px 0 28px;
+
+  color:
+    rgba(225, 225, 240, 0.72);
+
+  font-size:
+    1.05rem;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================
+   REWARD STATS
+========================================= */
+
+.rewardStats {
+  display: flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding:
+    18px
+    24px;
+
+  margin-bottom:
+    28px;
+
+  border-radius:
+    18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(16px);
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+.rewardStat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.statCoin,
+.statUsers {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    14px;
+}
+
+
+.statCoin {
+  background:
+    linear-gradient(
+      135deg,
+      #ffcc4d,
+      #f59e0b
+    );
+
+  color:
+    #7c4800;
+
+  box-shadow:
+    0 8px 20px
+    rgba(255, 166, 0, 0.25);
+}
+
+
+.statUsers {
+  background:
+    linear-gradient(
+      135deg,
+      #6d4aff,
+      #a855f7
+    );
+
+  color:
+    white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(130, 70, 255, 0.2);
+}
+
+
+.rewardStat strong {
+  display: block;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1.35rem;
+
+  line-height:
+    1;
+}
+
+
+.rewardStat span {
+  display: block;
+
+  max-width:
+    110px;
+
+  margin-top:
+    6px;
+
+  color:
+    rgba(220, 220, 235, 0.62);
+
+  font-size:
+    0.72rem;
+
+  line-height:
+    1.35;
+}
+
+
+.statDivider {
+  width: 1px;
+
+  height: 55px;
+
+  margin:
+    0 22px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-weight:
+    700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+
+.primaryButton {
+  min-width:
+    220px;
+
+  padding:
+    16px 22px;
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffb000,
+      #ff7a00 45%,
+      #7b2cff 100%
+    );
+
+  color:
+    white;
+
+  font-size:
+    0.98rem;
+
+  box-shadow:
+    0 12px 30px
+    rgba(124, 53, 255, 0.28);
+}
+
+
+.primaryButton span {
+  margin-left:
+    auto;
+
+  font-size:
+    1.4rem;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.primaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(124, 53, 255, 0.4);
+}
+
+
+.primaryButton:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+.secondaryButton {
+  min-width:
+    180px;
+
+  padding:
+    16px 20px;
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  color:
+    rgba(245, 245, 255, 0.85);
+}
+
+
+.secondaryButton span {
+  margin-left:
+    6px;
+}
+
+
+.secondaryButton:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(255, 255, 255, 0.09);
+
+  border-color:
+    rgba(139, 92, 246, 0.4);
+}
+
+
+/* =========================================
+   RIGHT VISUAL
+========================================= */
+
+.visualWrapper {
+  position: relative;
+
+  min-height:
+    420px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 2;
+}
+
+
+.visualGlow {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(123, 44, 255, 0.28),
+      rgba(255, 153, 0, 0.08),
+      transparent 70%
+    );
+
+  filter:
+    blur(25px);
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.orbit {
+  position: absolute;
+
+  width: 330px;
+  height: 120px;
+
+  bottom:
+    35px;
+
+  border:
+    2px solid
+    rgba(116, 68, 255, 0.45);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+    0 0 30px
+    rgba(116, 68, 255, 0.25),
+    inset 0 0 25px
+    rgba(116, 68, 255, 0.08);
+}
+
+
+.orbitSmall {
+  position: absolute;
+
+  width: 250px;
+  height: 80px;
+
+  bottom:
+    55px;
+
+  border:
+    1px solid
+    rgba(255, 174, 0, 0.18);
+
+  border-radius:
+    50%;
+}
+
+
+/* =========================================
+   GIFT SCENE
+========================================= */
+
+.giftScene {
+  position: relative;
+
+  width: 260px;
+  height: 280px;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   GIFT BOX
+========================================= */
+
+.giftBox {
+  position: absolute;
+
+  bottom:
+    30px;
+
+  left:
+    50%;
+
+  width:
+    210px;
+
+  height:
+    150px;
+
+  transform:
+    translateX(-50%);
+
+  perspective:
+    600px;
+}
+
+
+.boxFront {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 210px;
+  height: 120px;
+
+  border-radius:
+    8px 8px 20px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4c1d95,
+      #6d28d9 45%,
+      #3b0764
+    );
+
+  border:
+    1px solid
+    rgba(200, 120, 255, 0.55);
+
+  box-shadow:
+    0 20px 50px
+    rgba(90, 20, 180, 0.55),
+    inset 0 0 25px
+    rgba(180, 70, 255, 0.25);
+}
+
+
+.boxSide {
+  position: absolute;
+
+  right:
+    -32px;
+
+  bottom:
+    0;
+
+  width:
+    45px;
+
+  height:
+    115px;
+
+  transform:
+    skewY(-25deg);
+
+  border-radius:
+    0 10px 12px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #2d115f,
+      #16072e
+    );
+
+  border:
+    1px solid
+    rgba(154, 90, 255, 0.35);
+}
+
+
+.boxTop {
+  position: absolute;
+
+  top:
+    18px;
+
+  left:
+    12px;
+
+  width:
+    200px;
+
+  height:
+    55px;
+
+  transform:
+    skewX(-18deg);
+
+  border-radius:
+    12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #4c1d95
+    );
+
+  border:
+    1px solid
+    rgba(201, 137, 255, 0.5);
+
+  box-shadow:
+    inset 0 8px 18px
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.ribbonVertical {
+  position: absolute;
+
+  left:
+    88px;
+
+  bottom:
+    0;
+
+  width:
+    34px;
+
+  height:
+    150px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff8a00,
+      #ffd166,
+      #ff8a00
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(255, 160, 0, 0.35);
+}
+
+
+.ribbonHorizontal {
+  position: absolute;
+
+  top:
+    45px;
+
+  left:
+    -3px;
+
+  width:
+    215px;
+
+  height:
+    30px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd166,
+      #ff8a00
+    );
+
+  border-radius:
+    4px;
+
+  box-shadow:
+    0 0 18px
+    rgba(255, 160, 0, 0.3);
+}
+
+
+/* =========================================
+   MAIN VE COIN
+========================================= */
+
+.mainCoin {
+  position: absolute;
+
+  top:
+    0;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    145px;
+
+  height:
+    145px;
+
+  padding:
+    10px;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1a8,
+      #ffbd27,
+      #e47d00
+    );
+
+  box-shadow:
+    0 0 0 5px
+    rgba(255, 222, 130, 0.18),
+    0 15px 40px
+    rgba(255, 157, 0, 0.4),
+    inset 0 0 15px
+    rgba(255, 255, 255, 0.5);
+
+  z-index:
+    5;
+}
+
+
+.mainCoinInner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    50%;
+
+  border:
+    2px solid
+    rgba(255, 245, 210, 0.8);
+
+  color:
+    #8a4b00;
+
+  font-size:
+    2.4rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    -0.08em;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffe99b,
+      #f59e0b 65%
+    );
+}
+
+
+/* =========================================
+   FLOATING COINS
+========================================= */
+
+.smallCoin,
+.coin {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0aa,
+      #ffad16,
+      #d97706
+    );
+
+  border:
+    2px solid
+    rgba(255, 241, 186, 0.8);
+
+  color:
+    #8a4b00;
+
+  font-weight:
+    900;
+
+  box-shadow:
+    0 10px 25px
+    rgba(255, 166, 0, 0.28);
+}
+
+
+.smallCoin {
+  width:
+    55px;
+
+  height:
+    55px;
+
+  font-size:
+    0.95rem;
+}
+
+
+.floatCoinOne,
+.floatCoinTwo,
+.floatCoinThree {
+  position: absolute;
+
+  z-index:
+    6;
+}
+
+
+.floatCoinOne {
+  top:
+    60px;
+
+  left:
+    20px;
+}
+
+
+.floatCoinTwo {
+  top:
+    115px;
+
+  right:
+    5px;
+}
+
+
+.floatCoinThree {
+  bottom:
+    80px;
+
+  left:
+    20px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confettiOne,
+.confettiTwo,
+.confettiThree,
+.confettiFour,
+.confettiFive {
+  position: absolute;
+
+  width:
+    10px;
+
+  height:
+    16px;
+
+  border-radius:
+    3px;
+
+  z-index:
+    7;
+}
+
+
+.confettiOne {
+  top: 45px;
+  left: 120px;
+
+  background:
+    #e879f9;
+
+  transform:
+    rotate(35deg);
+}
+
+
+.confettiTwo {
+  top: 80px;
+  right: 70px;
+
+  background:
+    #f97316;
+
+  transform:
+    rotate(45deg);
+}
+
+
+.confettiThree {
+  top: 130px;
+  right: 40px;
+
+  background:
+    #818cf8;
+
+  transform:
+    rotate(20deg);
+}
+
+
+.confettiFour {
+  bottom: 120px;
+  left: 60px;
+
+  background:
+    #f59e0b;
+
+  transform:
+    rotate(50deg);
+}
+
+
+.confettiFive {
+  bottom: 60px;
+  right: 60px;
+
+  background:
+    #a855f7;
+
+  transform:
+    rotate(-30deg);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    padding:
+      45px 35px;
+
+    gap:
+      20px;
+  }
+
+
+  .visualWrapper {
+    transform:
+      scale(0.9);
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .hero {
+    grid-template-columns:
+      1fr;
+
+    text-align:
+      center;
+
+    padding:
+      50px 30px 20px;
+  }
+
+
+  .content {
+    margin:
+      0 auto;
+
+    max-width:
+      650px;
+  }
+
+
+  .rewardStats {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+
+  .actions {
+    justify-content:
+      center;
+  }
+
+
+  .visualWrapper {
+    min-height:
+      360px;
+
+    transform:
+      scale(0.9);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height:
+      auto;
+
+    padding:
+      40px 18px 10px;
+
+    border-radius:
+      22px;
+  }
+
+
+  .badge {
+    font-size:
+      0.7rem;
+  }
+
+
+  .title {
+    font-size:
+      clamp(
+        3rem,
+        15vw,
+        4rem
+      );
+  }
+
+
+  .subtitle {
+    font-size:
+      0.95rem;
+
+    line-height:
+      1.65;
+  }
+
+
+  .rewardStats {
+    width:
+      100%;
+
+    justify-content:
+      center;
+
+    padding:
+      15px 12px;
+  }
+
+
+  .statDivider {
+    margin:
+      0 12px;
+  }
+
+
+  .rewardStat {
+    gap:
+      8px;
+  }
+
+
+  .statCoin,
+  .statUsers {
+    width:
+      42px;
+
+    height:
+      42px;
+  }
+
+
+  .rewardStat strong {
+    font-size:
+      1.1rem;
+  }
+
+
+  .rewardStat span {
+    font-size:
+      0.65rem;
+  }
+
+
+  .actions {
+    flex-direction:
+      column;
+
+    width:
+      100%;
+  }
+
+
+  .primaryButton,
+  .secondaryButton {
+    width:
+      100%;
+  }
+
+
+  .visualWrapper {
+    min-height:
+      310px;
+
+    transform:
+      scale(0.75);
+
+    margin:
+      -30px 0;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .rewardStats {
+    flex-direction:
+      column;
+
+    gap:
+      14px;
+  }
+
+
+  .statDivider {
+    width:
+      70px;
+
+    height:
+      1px;
+
+    margin:
+      0;
+  }
+
+}

@@ -1,0 +1,673 @@
+/* ============================================
+   SHARE SECTION
+============================================ */
+
+.shareSection {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin:
+    var(--space-lg) auto
+    var(--space-2xl);
+
+  padding:
+    30px;
+
+  overflow: hidden;
+
+  border-radius:
+    26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.2);
+}
+
+
+/* ============================================
+   BACKGROUND GLOWS
+============================================ */
+
+.glowLeft,
+.glowRight {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  filter:
+    blur(80px);
+
+  pointer-events: none;
+
+  opacity: 0.3;
+}
+
+
+.glowLeft {
+  top: -120px;
+  left: -100px;
+
+  background:
+    rgba(108, 92, 231, 0.5);
+}
+
+
+.glowRight {
+  right: -120px;
+  bottom: -130px;
+
+  background:
+    rgba(0, 217, 181, 0.35);
+}
+
+
+/* ============================================
+   HEADER
+============================================ */
+
+.shareHeader {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom:
+    26px;
+}
+
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius:
+    16px;
+
+  color:
+    var(--accent-teal);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 217, 181, 0.18),
+      rgba(108, 92, 231, 0.2)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.eyebrow {
+  display: block;
+
+  margin-bottom:
+    4px;
+
+  color:
+    var(--accent-teal);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+.shareHeader h3 {
+  margin: 0;
+
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    clamp(
+      1.2rem,
+      3vw,
+      1.5rem
+    );
+}
+
+
+.shareHeader p {
+  margin:
+    5px 0 0;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.88rem;
+}
+
+
+/* ============================================
+   SOCIAL GRID
+============================================ */
+
+.socialGrid {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    12px;
+}
+
+
+/* ============================================
+   SOCIAL CARD
+============================================ */
+
+.socialCard {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    11px;
+
+  min-width: 0;
+
+  padding:
+    14px;
+
+  border-radius:
+    17px;
+
+  text-decoration:
+    none;
+
+  color:
+    white;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.socialCard::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+
+  pointer-events:
+    none;
+}
+
+
+.socialIcon {
+  position: relative;
+
+  z-index: 1;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius:
+    13px;
+
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+.socialText {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.socialText strong {
+  font-size:
+    0.88rem;
+
+  font-weight:
+    700;
+}
+
+
+.socialText span {
+  margin-top:
+    2px;
+
+  font-size:
+    0.68rem;
+
+  opacity:
+    0.78;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+.arrow {
+  position: relative;
+
+  z-index: 1;
+
+  font-size:
+    1.2rem;
+
+  opacity:
+    0.65;
+}
+
+
+/* ============================================
+   SOCIAL COLORS
+============================================ */
+
+.whatsapp {
+  background:
+    linear-gradient(
+      135deg,
+      #25d366,
+      #128c7e
+    );
+}
+
+
+.whatsapp:hover {
+  box-shadow:
+    0 14px 30px
+    rgba(37, 211, 102, 0.28);
+}
+
+
+.instagram {
+  background:
+    linear-gradient(
+      135deg,
+      #f58529,
+      #dd2a7b 50%,
+      #8134af
+    );
+}
+
+
+.instagram:hover {
+  box-shadow:
+    0 14px 30px
+    rgba(221, 42, 123, 0.28);
+}
+
+
+.facebook {
+  background:
+    linear-gradient(
+      135deg,
+      #1877f2,
+      #0a5cd1
+    );
+}
+
+
+.facebook:hover {
+  box-shadow:
+    0 14px 30px
+    rgba(24, 119, 242, 0.3);
+}
+
+
+/* ============================================
+   ACTION DIVIDER
+============================================ */
+
+.actionDivider {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin:
+    25px 0 18px;
+
+  color:
+    var(--text-dark-muted);
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+.actionDivider::before,
+.actionDivider::after {
+  content: '';
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.actionDivider span {
+  padding:
+    0 14px;
+}
+
+
+/* ============================================
+   UTILITY ACTIONS
+============================================ */
+
+.utilityActions {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    12px;
+}
+
+
+.utilityButton {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    9px;
+
+  padding:
+    13px 16px;
+
+  border-radius:
+    15px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.utilityButton:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--accent-teal);
+
+  background:
+    rgba(0, 217, 181, 0.06);
+}
+
+
+.utilityIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    var(--accent-teal);
+}
+
+
+.primaryAction {
+  background:
+    var(--gradient-primary);
+
+  border-color:
+    transparent;
+
+  color:
+    white;
+}
+
+
+.primaryAction .utilityIcon {
+  color:
+    white;
+}
+
+
+.primaryAction:hover {
+  box-shadow:
+    var(--shadow-glow-teal);
+
+  border-color:
+    transparent;
+}
+
+
+/* ============================================
+   LOADING
+============================================ */
+
+.loadingState {
+  padding:
+    25px;
+
+  text-align:
+    center;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.9rem;
+}
+
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 768px) {
+
+  .socialGrid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .socialCard {
+    padding:
+      15px 17px;
+  }
+
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+
+  .shareSection {
+    padding:
+      20px;
+
+    border-radius:
+      22px;
+  }
+
+
+  .shareHeader {
+    align-items:
+      flex-start;
+  }
+
+
+  .headerIcon {
+    width:
+      44px;
+
+    height:
+      44px;
+
+    border-radius:
+      14px;
+  }
+
+
+  .utilityActions {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .utilityButton {
+    min-height:
+      48px;
+  }
+
+}
+
+
+/* ============================================
+   SMALL MOBILE
+============================================ */
+
+@media (max-width: 420px) {
+
+  .socialText span {
+    display:
+      none;
+  }
+
+
+  .socialCard {
+    padding:
+      13px;
+  }
+
+
+  .shareHeader h3 {
+    font-size:
+      1.15rem;
+  }
+
+}

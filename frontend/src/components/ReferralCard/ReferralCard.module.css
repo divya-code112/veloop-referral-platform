@@ -1,0 +1,732 @@
+/* ============================================
+   REFERRAL CARD
+============================================ */
+
+.referralSection {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin:
+    10px auto
+    var(--space-2xl);
+
+  padding:
+    32px;
+
+  overflow: hidden;
+
+  border-radius:
+    28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter:
+    blur(22px);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+/* ============================================
+   BACKGROUND GLOWS
+============================================ */
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter:
+    blur(70px);
+
+  opacity: 0.5;
+}
+
+
+.glowOne {
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  left: -70px;
+
+  background:
+    rgba(108, 92, 231, 0.35);
+}
+
+
+.glowTwo {
+  width: 200px;
+  height: 200px;
+
+  right: -100px;
+  bottom: -120px;
+
+  background:
+    rgba(0, 217, 181, 0.2);
+}
+
+
+/* ============================================
+   HEADER
+============================================ */
+
+.cardHeader {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom:
+    28px;
+}
+
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.25),
+      rgba(0, 217, 181, 0.18)
+    );
+
+  color:
+    var(--accent-teal);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    var(--accent-teal);
+
+  font-size:
+    0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+.cardHeader h2 {
+  margin: 0;
+
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    clamp(1.25rem, 3vw, 1.6rem);
+}
+
+
+.cardHeader p {
+  margin:
+    5px 0 0;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.5;
+}
+
+
+/* ============================================
+   REFERRAL CODE BLOCK
+============================================ */
+
+.referralBlock {
+  position: relative;
+
+  z-index: 1;
+
+  padding:
+    22px;
+
+  border-radius:
+    20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.12),
+      rgba(108, 92, 231, 0.04)
+    );
+
+  border:
+    1px solid
+    rgba(108, 92, 231, 0.25);
+}
+
+
+.blockTop {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 15px;
+
+  margin-bottom:
+    18px;
+}
+
+
+.labelGroup {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.iconBox {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background:
+    rgba(108, 92, 231, 0.2);
+
+  color:
+    #a99cff;
+}
+
+
+.label {
+  display: block;
+
+  color:
+    var(--text-dark-muted);
+
+  font-size:
+    0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.08em;
+}
+
+
+.labelGroup p {
+  margin:
+    4px 0 0;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.78rem;
+}
+
+
+/* ============================================
+   REFERRAL CODE DISPLAY
+============================================ */
+
+.codeDisplay {
+  width: 100%;
+
+  padding:
+    18px 20px;
+
+  text-align: center;
+
+  border-radius:
+    15px;
+
+  background:
+    rgba(5, 8, 20, 0.45);
+
+  border:
+    1px dashed
+    rgba(255, 255, 255, 0.18);
+
+  color:
+    #ffffff;
+
+  font-family:
+    var(--font-heading);
+
+  font-size:
+    clamp(1.3rem, 4vw, 1.8rem);
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+  text-shadow:
+    0 0 20px
+    rgba(108, 92, 231, 0.5);
+}
+
+
+/* ============================================
+   DIVIDER
+============================================ */
+
+.mainDivider {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin:
+    24px 0;
+
+  color:
+    var(--text-dark-muted);
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+.mainDivider::before,
+.mainDivider::after {
+  content: '';
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.mainDivider span {
+  padding:
+    0 14px;
+}
+
+
+/* ============================================
+   REFERRAL LINK BLOCK
+============================================ */
+
+.linkBlock {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding:
+    16px;
+
+  border-radius:
+    18px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.linkIcon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background:
+    rgba(0, 217, 181, 0.1);
+
+  color:
+    var(--accent-teal);
+}
+
+
+.linkContent {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.linkValue {
+  margin-top:
+    7px;
+
+  overflow: hidden;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.82rem;
+}
+
+
+/* ============================================
+   BUTTONS
+============================================ */
+
+.copyBtnWrap {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+
+.copyIconButton {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    13px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  color:
+    var(--text-dark-primary);
+
+  cursor: pointer;
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.copyIconButton:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--gradient-primary);
+
+  color:
+    white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(108, 92, 231, 0.3);
+}
+
+
+.copyLinkButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+
+  padding:
+    11px 17px;
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    var(--gradient-primary);
+
+  color:
+    white;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.copyLinkButton:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    var(--shadow-glow-teal);
+}
+
+
+.copyIconButton:disabled,
+.copyLinkButton:disabled {
+  opacity: 0.5;
+
+  cursor:
+    not-allowed;
+
+  transform:
+    none;
+
+  box-shadow:
+    none;
+}
+
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 768px) {
+
+  .referralSection {
+    padding:
+      25px;
+  }
+
+
+  .linkBlock {
+    align-items:
+      flex-start;
+  }
+
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+
+  .referralSection {
+    padding:
+      20px;
+
+    border-radius:
+      22px;
+  }
+
+
+  .cardHeader {
+    align-items:
+      flex-start;
+  }
+
+
+  .cardHeader h2 {
+    font-size:
+      1.3rem;
+  }
+
+
+  .referralBlock {
+    padding:
+      16px;
+  }
+
+
+  .linkBlock {
+    display: grid;
+
+    grid-template-columns:
+      42px 1fr;
+
+    gap:
+      12px;
+  }
+
+
+  .linkContent {
+    width: 100%;
+  }
+
+
+  .linkValue {
+    white-space:
+      normal;
+
+    word-break:
+      break-all;
+
+    overflow-wrap:
+      anywhere;
+  }
+
+
+  .copyBtnWrap {
+    grid-column:
+      1 / -1;
+
+    width:
+      100%;
+  }
+
+
+  .copyLinkButton {
+    width:
+      100%;
+  }
+
+
+  .copyIconButton {
+    width:
+      38px;
+
+    height:
+      38px;
+  }
+
+
+  .codeDisplay {
+    padding:
+      16px 10px;
+
+    letter-spacing:
+      0.1em;
+  }
+
+}
+
+
+/* ============================================
+   SMALL MOBILE
+============================================ */
+
+@media (max-width: 420px) {
+
+  .cardHeader {
+    gap:
+      10px;
+  }
+
+
+  .headerIcon {
+    width:
+      42px;
+
+    height:
+      42px;
+
+    border-radius:
+      13px;
+  }
+
+
+  .labelGroup {
+    gap:
+      9px;
+  }
+
+
+  .iconBox {
+    width:
+      38px;
+
+    height:
+      38px;
+  }
+
+
+  .codeDisplay {
+    font-size:
+      1.2rem;
+  }
+
+}
