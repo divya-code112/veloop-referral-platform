@@ -1,0 +1,653 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 40px;
+
+  border-radius: var(--radius-xl);
+
+  background:
+    linear-gradient(
+      145deg,
+      #171b27,
+      #0e1018
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.6);
+}
+
+.closeButton {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color:
+    var(--text-dark-secondary);
+
+  border: none;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #fff;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================
+   TASK CONTENT
+========================= */
+
+.taskContent {
+  text-align: center;
+}
+
+.bigIcon {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.3),
+      rgba(0, 217, 181, 0.2)
+    );
+
+  color:
+    var(--accent-teal);
+}
+
+.taskContent h2 {
+  color:
+    var(--text-dark-primary);
+
+  margin-bottom: 12px;
+}
+
+.taskContent p {
+  color:
+    var(--text-dark-secondary);
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================
+   ADVERTISEMENT
+========================= */
+
+.adBox {
+  margin-bottom: 24px;
+}
+
+.adPlaceholder {
+  height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.15),
+      rgba(0, 217, 181, 0.1)
+    );
+
+  border:
+    1px dashed
+    rgba(255, 255, 255, 0.2);
+
+  color:
+    var(--text-dark-muted);
+}
+
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primaryButton {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    var(--gradient-primary);
+
+  color: #fff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primaryButton:hover:not(:disabled) {
+  transform:
+    translateY(-2px);
+}
+
+.primaryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   CAPTCHA
+========================= */
+
+.captchaBox {
+  padding: 16px;
+
+  margin-bottom: 14px;
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    rgba(108, 92, 231, 0.15);
+
+  color:
+    var(--accent-teal);
+
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  letter-spacing: 8px;
+}
+
+.input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 16px;
+
+  border-radius:
+    var(--radius-md);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #fff;
+
+  outline: none;
+}
+
+.input:focus {
+  border-color:
+    var(--accent-teal);
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.question {
+  font-size: 1.05rem;
+
+  color:
+    var(--text-dark-primary)
+    !important;
+}
+
+.options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.option {
+  padding: 13px;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color:
+    var(--text-dark-secondary);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  border-color:
+    var(--accent-teal);
+}
+
+.selectedOption {
+  background:
+    rgba(0, 217, 181, 0.12);
+
+  border-color:
+    var(--accent-teal);
+
+  color:
+    var(--accent-teal);
+}
+
+
+/* =========================
+   DAILY CHECK-IN
+========================= */
+
+.checkinDate {
+  padding: 16px;
+
+  margin-bottom: 16px;
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    var(--fs-small);
+}
+
+
+/* =========================
+   STREAK SECTION
+========================= */
+
+.streakContainer {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.streakCard {
+  position: relative;
+
+  padding: 16px 12px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 140, 0, 0.15),
+      rgba(255, 80, 0, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(255, 153, 0, 0.2);
+}
+
+.streakCard::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 170, 0, 0.15),
+      transparent 60%
+    );
+
+  pointer-events: none;
+}
+
+.streakIcon {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  margin: 0 auto 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 140, 0, 0.15);
+
+  color: #ff9d00;
+}
+
+.streakValue {
+  position: relative;
+
+  display: block;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  color: #fff;
+}
+
+.streakLabel {
+  position: relative;
+
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 0.72rem;
+
+  color:
+    var(--text-dark-secondary);
+}
+
+
+/* LONGEST STREAK */
+
+.longestStreakCard {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.16),
+      rgba(0, 217, 181, 0.06)
+    );
+
+  border-color:
+    rgba(108, 92, 231, 0.25);
+}
+
+.longestStreakCard .streakIcon {
+  background:
+    rgba(108, 92, 231, 0.16);
+
+  color:
+    #a89cff;
+}
+
+
+/* =========================
+   REWARD
+========================= */
+
+.rewardPreview {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin: 18px 0;
+
+  padding: 10px 14px;
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    rgba(0, 217, 181, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 217, 181, 0.18);
+
+  color:
+    var(--accent-teal);
+
+  font-size:
+    var(--fs-small);
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   SUCCESS PROGRESS
+========================= */
+
+.successProgress {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(34, 197, 94, 0.08);
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.2);
+
+  color:
+    #4ade80;
+}
+
+.successProgress div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.successProgress strong {
+  font-size: 0.9rem;
+}
+
+.successProgress span {
+  font-size: 0.78rem;
+
+  color:
+    var(--text-dark-secondary);
+}
+
+
+/* =========================
+   STREAK SUCCESS
+========================= */
+
+.streakSuccess {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 12px;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 140, 0, 0.12),
+      rgba(255, 70, 0, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(255, 153, 0, 0.25);
+
+  color:
+    #ffae42;
+
+  font-weight: 700;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  margin-top: 16px;
+
+  padding: 12px;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(0, 217, 181, 0.1);
+
+  color:
+    var(--accent-teal);
+
+  font-size:
+    var(--fs-small);
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.spinner {
+  animation:
+    spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .modal {
+    padding:
+      32px 20px;
+  }
+
+  .options {
+    grid-template-columns:
+      1fr;
+  }
+
+  .streakContainer {
+    gap: 10px;
+  }
+
+  .streakCard {
+    padding:
+      14px 8px;
+  }
+
+}

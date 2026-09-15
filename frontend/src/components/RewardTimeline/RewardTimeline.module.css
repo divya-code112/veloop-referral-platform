@@ -1,0 +1,1836 @@
+/* ========================================
+   MAIN PANEL
+======================================== */
+
+.panel {
+  position: relative;
+
+  width: 100%;
+
+  margin:
+    var(--space-lg) 0;
+
+  padding:
+    1.4rem
+    1.5rem
+    1.8rem;
+
+  overflow: hidden;
+
+  border-radius:
+    22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1220 0%,
+      #090e19 100%
+    );
+
+  border:
+    1px solid
+    rgba(108, 92, 231, 0.18);
+
+  box-shadow:
+    0 18px 55px
+    rgba(0, 0, 0, 0.32),
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.035);
+}
+
+
+/* ========================================
+   SUBTLE BACKGROUND
+======================================== */
+
+.panel::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(108, 92, 231, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 100%,
+      rgba(0, 217, 181, 0.06),
+      transparent 28%
+    );
+
+  z-index: 0;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom:
+    1.5rem;
+}
+
+
+.title {
+  margin: 0;
+
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    clamp(
+      1.15rem,
+      2vw,
+      1.45rem
+    );
+
+  font-weight: 750;
+
+  letter-spacing:
+    -0.02em;
+}
+
+
+/* ========================================
+   VIEW ALL
+======================================== */
+
+.viewAllButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  border: none;
+
+  padding: 7px 4px;
+
+  background:
+    transparent;
+
+  color:
+    #a78bfa;
+
+  font-family:
+    inherit;
+
+  font-size:
+    0.88rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.viewAllButton:hover {
+  color:
+    #c4b5fd;
+}
+
+
+/* ========================================
+   JOURNEY CONTAINER
+======================================== */
+
+.journeyContainer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+
+/* ========================================
+   STEP WRAPPER
+======================================== */
+
+.stepWrapper {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* ========================================
+   STEP
+======================================== */
+
+.step {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   VISUAL ROW
+======================================== */
+
+.visualRow {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom:
+    0.8rem;
+}
+
+
+/* ========================================
+   STEP NUMBER
+======================================== */
+
+.stepNumber {
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  z-index: 3;
+
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    800;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0, 0, 0, 0.3);
+}
+
+
+/* Purple */
+
+.purple {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #5b21b6
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(124, 58, 237, 0.5);
+}
+
+
+/* Blue */
+
+.blue {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #1d4ed8
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(59, 130, 246, 0.45);
+}
+
+
+/* Orange */
+
+.orange {
+  background:
+    linear-gradient(
+      135deg,
+      #fb923c,
+      #ea580c
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(249, 115, 22, 0.45);
+}
+
+
+/* Green */
+
+.green {
+  background:
+    linear-gradient(
+      135deg,
+      #34d399,
+      #059669
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(16, 185, 129, 0.4);
+}
+
+
+/* ========================================
+   ICON CARD
+======================================== */
+
+.iconCard {
+  position: relative;
+
+  width: 92px;
+
+  height: 92px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius:
+    17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 31, 50, 0.95),
+      rgba(14, 19, 33, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.3),
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ========================================
+   ICON COLORS
+======================================== */
+
+.purpleCard {
+  color:
+    #a855f7;
+
+  border-color:
+    rgba(168, 85, 247, 0.22);
+
+  box-shadow:
+    0 0 25px
+    rgba(124, 58, 237, 0.12),
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.05);
+}
+
+
+.blueCard {
+  color:
+    #38bdf8;
+
+  border-color:
+    rgba(56, 189, 248, 0.2);
+
+  box-shadow:
+    0 0 25px
+    rgba(56, 189, 248, 0.1);
+}
+
+
+.orangeCard {
+  color:
+    #fbbf24;
+
+  border-color:
+    rgba(251, 191, 36, 0.22);
+
+  box-shadow:
+    0 0 25px
+    rgba(251, 191, 36, 0.1);
+}
+
+
+.greenCard {
+  color:
+    #4ade80;
+
+  border-color:
+    rgba(74, 222, 128, 0.2);
+
+  box-shadow:
+    0 0 25px
+    rgba(74, 222, 128, 0.1);
+}
+
+
+/* ========================================
+   ACHIEVED
+======================================== */
+
+.achieved {
+  animation:
+    achievedGlow
+    3s ease-in-out
+    infinite;
+}
+
+
+@keyframes achievedGlow {
+
+  0%,
+  100% {
+
+    filter:
+      brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+      brightness(1.15);
+
+  }
+
+}
+
+
+/* ========================================
+   COMPLETED DOT
+======================================== */
+
+.completedDot {
+  position: absolute;
+
+  top: -6px;
+
+  right: -6px;
+
+  width: 22px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #10b981;
+
+  color:
+    #ffffff;
+
+  border:
+    2px solid
+    #0d1220;
+
+  box-shadow:
+    0 4px 12px
+    rgba(16, 185, 129, 0.4);
+}
+
+
+/* ========================================
+   STEP CONTENT
+======================================== */
+
+.stepContent {
+  max-width: 170px;
+
+  margin: 0 auto;
+}
+
+
+.stepContent h3 {
+  margin:
+    0 0 0.35rem;
+
+  color:
+    var(--text-dark-primary);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.25;
+}
+
+
+.stepContent p {
+  margin: 0;
+
+  color:
+    var(--text-dark-secondary);
+
+  font-size:
+    0.82rem;
+
+  line-height:
+    1.45;
+}
+
+
+/* ========================================
+   CONNECTOR
+======================================== */
+
+.connector {
+  position: absolute;
+
+  top: 44px;
+
+  right: -28px;
+
+  z-index: 1;
+
+  width: 56px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    rgba(148, 163, 184, 0.55);
+}
+
+
+.connectorLine {
+  position: absolute;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(108, 92, 231, 0.25),
+      rgba(148, 163, 184, 0.25)
+    );
+}
+
+
+.connector svg {
+  position: relative;
+
+  z-index: 2;
+
+  background:
+    #0b101c;
+
+  padding: 1px;
+}
+
+
+/* ========================================
+   PROGRESS FOOTER
+======================================== */
+
+.progressFooter {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  width: fit-content;
+
+  margin:
+    1.6rem auto 0;
+
+  padding:
+    8px 14px;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(16, 185, 129, 0.08);
+
+  border:
+    1px solid
+    rgba(16, 185, 129, 0.15);
+
+  color:
+    #6ee7b7;
+
+  font-size:
+    0.78rem;
+}
+
+
+.progressFooter strong {
+  color:
+    #a7f3d0;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.loadingGrid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    1.5rem;
+}
+
+
+.loadingStep {
+  text-align: center;
+}
+
+
+.loadingNumber,
+.loadingIcon,
+.loadingTitle,
+.loadingText {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+.loadingNumber::after,
+.loadingIcon::after,
+.loadingTitle::after,
+.loadingText::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  animation:
+    shimmer 1.5s infinite;
+}
+
+
+.loadingNumber {
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 50%;
+
+  margin:
+    30px auto
+    -45px;
+}
+
+
+.loadingIcon {
+  width: 92px;
+
+  height: 92px;
+
+  margin:
+    0 auto
+    15px;
+
+  border-radius:
+    17px;
+}
+
+
+.loadingTitle {
+  width: 70%;
+
+  height: 16px;
+
+  border-radius: 8px;
+
+  margin:
+    0 auto 10px;
+}
+
+
+.loadingText {
+  width: 90%;
+
+  height: 11px;
+
+  border-radius: 8px;
+
+  margin: auto;
+}
+
+
+@keyframes shimmer {
+
+  from {
+
+    transform:
+      translateX(-100%);
+
+  }
+
+  to {
+
+    transform:
+      translateX(200%);
+
+  }
+
+}
+
+
+/* ========================================
+   ERROR STATE
+======================================== */
+
+.errorState {
+  position: relative;
+
+  z-index: 2;
+
+  min-height:
+    180px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  text-align: center;
+
+  color:
+    var(--text-dark-secondary);
+}
+
+
+.errorState svg {
+  color:
+    #a78bfa;
+}
+
+
+.errorState h3 {
+  margin: 0 0 5px;
+
+  color:
+    var(--text-dark-primary);
+}
+
+
+.errorState p {
+  margin: 0;
+
+  font-size:
+    0.85rem;
+}
+
+
+.errorState button {
+  margin-top: 8px;
+
+  padding:
+    8px 16px;
+
+  border-radius:
+    999px;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.3);
+
+  background:
+    rgba(139, 92, 246, 0.1);
+
+  color:
+    #c4b5fd;
+
+  font-family:
+    inherit;
+
+  cursor:
+    pointer;
+}
+
+/* ========================================
+   REFERRAL JOURNEY MODAL
+======================================== */
+
+.modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    rgba(3, 6, 15, 0.78);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  overflow-y: auto;
+}
+
+
+/* ========================================
+   MODAL CONTAINER
+======================================== */
+
+.journeyModal {
+  position: relative;
+
+  width: 100%;
+  max-width: 760px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  border-radius: 28px;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #131827,
+      #0b0f1c
+    );
+
+  border:
+    1px solid
+    rgba(139, 124, 246, 0.22);
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.6),
+    0 0 70px
+    rgba(108, 92, 231, 0.1);
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    rgba(139, 124, 246, 0.4)
+    transparent;
+}
+
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.modalHeader {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 24px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.modalHeading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.modalTitleIcon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  color:
+    #c4b5fd;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.28),
+      rgba(139, 92, 246, 0.12)
+    );
+
+  border:
+    1px solid
+    rgba(139, 124, 246, 0.28);
+
+  box-shadow:
+    0 8px 24px
+    rgba(108, 92, 231, 0.2);
+}
+
+
+.modalHeading h2 {
+  margin: 0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1.45rem;
+
+  font-weight: 750;
+}
+
+
+.modalHeading p {
+  margin:
+    5px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size:
+    0.85rem;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.closeButton {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.closeButton:hover {
+  color:
+    #ffffff;
+
+  background:
+    rgba(239, 68, 68, 0.12);
+
+  border-color:
+    rgba(239, 68, 68, 0.2);
+
+  transform:
+    rotate(90deg);
+}
+
+
+/* ========================================
+   MODAL PROGRESS
+======================================== */
+
+.modalProgress {
+  margin: 22px 0;
+
+  padding: 16px 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108, 92, 231, 0.1),
+      rgba(0, 217, 181, 0.05)
+    );
+
+  border:
+    1px solid
+    rgba(139, 124, 246, 0.14);
+}
+
+
+.modalProgress span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size:
+    0.72rem;
+}
+
+
+.modalProgress strong {
+  color:
+    #ffffff;
+
+  font-size:
+    0.95rem;
+}
+
+
+.progressBadge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    8px 12px;
+
+  border-radius: 999px;
+
+  white-space: nowrap;
+
+  color:
+    #c4b5fd;
+
+  background:
+    rgba(108, 92, 231, 0.13);
+
+  border:
+    1px solid
+    rgba(139, 124, 246, 0.18);
+
+  font-size:
+    0.75rem;
+
+  font-weight: 700;
+}
+
+
+/* ========================================
+   MODAL STEPS
+======================================== */
+
+.modalSteps {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+
+.modalStep {
+  position: relative;
+
+  display: flex;
+
+  gap: 18px;
+
+  padding:
+    10px 0
+    22px;
+}
+
+
+.modalStep:last-child {
+  padding-bottom: 10px;
+}
+
+
+/* ========================================
+   STEP LEFT
+======================================== */
+
+.modalStepLeft {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 54px;
+
+  flex-shrink: 0;
+}
+
+
+.modalStepIcon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.modalLine {
+  position: absolute;
+
+  top: 50px;
+  bottom: -22px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(139, 124, 246, 0.45),
+      rgba(255, 255, 255, 0.06)
+    );
+}
+
+
+/* ========================================
+   STEP CONTENT
+======================================== */
+
+.modalStepContent {
+  flex: 1;
+
+  padding:
+    12px 16px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.modalStepContent:hover {
+  transform:
+    translateX(3px);
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border-color:
+    rgba(139, 124, 246, 0.18);
+}
+
+
+.modalStepCompleted .modalStepContent {
+  border-color:
+    rgba(34, 197, 94, 0.13);
+}
+
+
+/* ========================================
+   STEP TOP
+======================================== */
+
+.modalStepTop {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 7px;
+}
+
+
+.stepLabel {
+  color:
+    #a78bfa;
+
+  font-size:
+    0.64rem;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+.completedBadge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding:
+    4px 8px;
+
+  border-radius: 999px;
+
+  color:
+    #4ade80;
+
+  background:
+    rgba(34, 197, 94, 0.09);
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.14);
+
+  font-size:
+    0.65rem;
+
+  font-weight: 700;
+}
+
+
+.modalStepContent h3 {
+  margin: 0 0 6px;
+
+  color:
+    #f8fafc;
+
+  font-size:
+    1rem;
+}
+
+
+.modalStepContent p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size:
+    0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   REWARD INFORMATION
+======================================== */
+
+.modalRewardInfo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 20px;
+
+  padding: 16px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 176, 32, 0.09),
+      rgba(108, 92, 231, 0.07)
+    );
+
+  border:
+    1px solid
+    rgba(255, 176, 32, 0.14);
+}
+
+
+.rewardInfoIcon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color:
+    #fbbf24;
+
+  background:
+    rgba(255, 176, 32, 0.12);
+}
+
+
+.modalRewardInfo h4 {
+  margin:
+    0 0 4px;
+
+  color:
+    #f8fafc;
+
+  font-size:
+    0.9rem;
+}
+
+
+.modalRewardInfo p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size:
+    0.76rem;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   DONE BUTTON
+======================================== */
+
+.modalDoneButton {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding:
+    13px 20px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  color:
+    #ffffff;
+
+  font-size:
+    0.9rem;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6c5ce7,
+      #8b5cf6
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(108, 92, 231, 0.28);
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.modalDoneButton:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 35px
+    rgba(108, 92, 231, 0.4);
+}
+
+
+/* ========================================
+   MOBILE MODAL
+======================================== */
+
+@media (max-width: 600px) {
+
+  .modalOverlay {
+    padding: 12px;
+
+    align-items:
+      flex-end;
+  }
+
+
+  .journeyModal {
+    max-height: 92vh;
+
+    padding: 20px;
+
+    border-radius:
+      24px 24px 18px 18px;
+  }
+
+
+  .modalHeading h2 {
+    font-size:
+      1.15rem;
+  }
+
+
+  .modalHeading p {
+    font-size:
+      0.75rem;
+  }
+
+
+  .modalTitleIcon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+  }
+
+
+  .modalProgress {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .progressBadge {
+    align-self:
+      flex-start;
+  }
+
+
+  .modalStep {
+    gap: 12px;
+  }
+
+
+  .modalStepLeft {
+    width: 46px;
+  }
+
+
+  .modalStepIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .modalLine {
+    top: 44px;
+  }
+
+
+  .modalStepContent {
+    padding:
+      12px;
+  }
+
+
+  .modalRewardInfo {
+    align-items:
+      flex-start;
+  }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .panel {
+    padding:
+      1.3rem
+      1rem
+      1.5rem;
+  }
+
+
+  .journeyContainer {
+    gap: 0;
+  }
+
+
+  .iconCard {
+    width: 78px;
+
+    height: 78px;
+  }
+
+
+  .iconCard svg {
+    width: 35px;
+
+    height: 35px;
+  }
+
+
+  .stepNumber {
+    width: 31px;
+
+    height: 31px;
+
+    font-size:
+      0.85rem;
+  }
+
+
+  .connector {
+    width: 38px;
+
+    right: -19px;
+
+    top: 37px;
+  }
+
+
+  .stepContent {
+    max-width: 145px;
+  }
+
+
+  .stepContent h3 {
+    font-size:
+      0.9rem;
+  }
+
+
+  .stepContent p {
+    font-size:
+      0.75rem;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .panel {
+    padding:
+      1.2rem
+      1rem
+      1.4rem;
+  }
+
+
+  .journeyContainer {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      2rem
+      1rem;
+  }
+
+
+  .stepWrapper {
+    display: block;
+  }
+
+
+  .connector {
+    display: none;
+  }
+
+
+  .visualRow {
+    margin-bottom:
+      0.7rem;
+  }
+
+
+  .stepNumber {
+    left:
+      calc(50% - 62px);
+  }
+
+
+  .iconCard {
+    width: 82px;
+
+    height: 82px;
+  }
+
+
+  .stepContent {
+    max-width: 145px;
+  }
+
+
+  .loadingGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      2rem 1rem;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+
+  .header {
+    margin-bottom:
+      1.2rem;
+  }
+
+
+  .title {
+    font-size:
+      1.05rem;
+  }
+
+
+  .viewAllButton {
+    font-size:
+      0.78rem;
+  }
+
+
+  .journeyContainer {
+    gap:
+      1.8rem
+      0.6rem;
+  }
+
+
+  .iconCard {
+    width: 72px;
+
+    height: 72px;
+
+    border-radius:
+      14px;
+  }
+
+
+  .iconCard svg {
+    width: 32px;
+
+    height: 32px;
+  }
+
+
+  .stepNumber {
+    width: 29px;
+
+    height: 29px;
+
+    left:
+      calc(50% - 56px);
+
+    font-size:
+      0.78rem;
+  }
+
+
+  .stepContent h3 {
+    font-size:
+      0.82rem;
+  }
+
+
+  .stepContent p {
+    font-size:
+      0.68rem;
+  }
+
+
+  .progressFooter {
+    font-size:
+      0.68rem;
+
+    flex-wrap:
+      wrap;
+
+    justify-content:
+      center;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .achieved,
+  .loadingNumber::after,
+  .loadingIcon::after,
+  .loadingTitle::after,
+  .loadingText::after {
+    animation:
+      none;
+  }
+
+}

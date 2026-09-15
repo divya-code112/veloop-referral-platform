@@ -1,0 +1,44 @@
+.orbLayer {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  will-change: transform;
+
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 768px) {
+  .orb {
+    filter: blur(45px);
+  }
+}
+
+@media (max-width: 480px) {
+  .orbLayer {
+    opacity: 0.7;
+  }
+
+  .orb:nth-child(3),
+  .orb:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    transform: none !important;
+  }
+}
