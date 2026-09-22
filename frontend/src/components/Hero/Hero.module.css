@@ -1,0 +1,1362 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 540px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 55px 55px;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d0b24 0%,
+      #12102f 45%,
+      #09091c 100%
+    );
+
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.backgroundGlowOne,
+.backgroundGlowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+
+  z-index: -3;
+}
+
+
+.backgroundGlowOne {
+  width: 400px;
+  height: 400px;
+
+  top: -200px;
+  left: -180px;
+
+  background: rgba(111, 63, 255, 0.3);
+}
+
+
+.backgroundGlowTwo {
+  width: 350px;
+  height: 350px;
+
+  right: -130px;
+  bottom: -150px;
+
+  background: rgba(255, 145, 0, 0.14);
+}
+
+
+.gridPattern {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.3;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 10%,
+      transparent 80%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 10%,
+      transparent 80%
+    );
+
+  z-index: -2;
+}
+
+
+.noise {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.02;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 1) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 5px 5px;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 580px;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 16px;
+
+  margin-bottom: 22px;
+
+  border-radius: 100px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 190, 50, 0.12),
+      rgba(255, 139, 0, 0.05)
+    );
+
+  border: 1px solid rgba(255, 184, 52, 0.25);
+
+  color: #ffd36a;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  box-shadow:
+    0 10px 30px rgba(255, 166, 0, 0.08);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+  margin: 0;
+
+  color: #f8f7ff;
+
+  font-size:
+    clamp(3.2rem, 5.5vw, 5.3rem);
+
+  line-height: 1.03;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+
+.title span {
+  display: block;
+
+  margin-top: 8px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffd86b,
+      #ff9f0a 40%,
+      #b77cff 75%,
+      #ffd86b
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    gradientShift
+    6s
+    linear
+    infinite;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0 center;
+  }
+
+  100% {
+    background-position: 250% center;
+  }
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+  max-width: 520px;
+
+  margin: 24px 0 30px;
+
+  color: rgba(225, 224, 240, 0.72);
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   REWARD STATS
+========================================= */
+
+.rewardStats {
+  display: flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 18px 24px;
+
+  margin-bottom: 30px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+.rewardStat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.statCoin,
+.statUsers {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+}
+
+
+.statCoin {
+  background:
+    linear-gradient(
+      135deg,
+      #ffe06e,
+      #f59e0b
+    );
+
+  color: #7a4300;
+
+  box-shadow:
+    0 10px 25px rgba(245, 158, 11, 0.25);
+}
+
+
+.statUsers {
+  background:
+    linear-gradient(
+      135deg,
+      #7656ff,
+      #b149ff
+    );
+
+  color: white;
+
+  box-shadow:
+    0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+
+.rewardStat strong {
+  display: block;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  line-height: 1.1;
+}
+
+
+.rewardStat span {
+  display: block;
+
+  max-width: 125px;
+
+  margin-top: 5px;
+
+  color: rgba(220, 220, 235, 0.58);
+
+  font-size: 0.72rem;
+
+  line-height: 1.4;
+}
+
+
+.statDivider {
+  width: 1px;
+
+  height: 58px;
+
+  margin: 0 24px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.primaryButton {
+  min-width: 220px;
+
+  padding: 16px 20px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #ffbf22,
+      #ff8a00 48%,
+      #8b3dff
+    );
+
+  color: white;
+
+  font-size: 0.96rem;
+
+  box-shadow:
+    0 14px 35px rgba(130, 70, 255, 0.3);
+}
+
+
+.primaryButton span {
+  flex: 1;
+
+  text-align: left;
+}
+
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 22px 45px rgba(124, 58, 237, 0.42);
+}
+
+
+.secondaryButton {
+  min-width: 175px;
+
+  padding: 16px 20px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  color: rgba(245, 245, 255, 0.88);
+}
+
+
+.secondaryButton:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   TRUST TEXT
+========================================= */
+
+.trustText {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 20px 0 0;
+
+  color: rgba(210, 210, 225, 0.45);
+
+  font-size: 0.78rem;
+}
+
+
+.trustDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #4ade80;
+
+  box-shadow:
+    0 0 12px rgba(74, 222, 128, 0.7);
+}
+
+
+/* =========================================
+   ILLUSTRATION AREA
+========================================= */
+
+.visualWrapper {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   ILLUSTRATION GLOW
+========================================= */
+
+.visualGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 92, 255, 0.42) 0%,
+      rgba(139, 92, 246, 0.24) 24%,
+      rgba(95, 72, 255, 0.14) 42%,
+      rgba(255, 157, 0, 0.08) 58%,
+      transparent 75%
+    );
+
+  filter: blur(42px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   SECONDARY ILLUSTRATION GLOW
+========================================= */
+
+.visualGlowSecondary {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: 10px;
+  bottom: 20px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 170, 0, 0.18),
+      rgba(255, 145, 0, 0.08),
+      transparent 72%
+    );
+
+  filter: blur(85px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   DECORATIVE ORBS
+========================================= */
+
+.glowOrbOne,
+.glowOrbTwo,
+.glowOrbThree {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+.glowOrbOne {
+  width: 10px;
+  height: 10px;
+
+  top: 80px;
+  left: 35px;
+
+  background: #ffd34e;
+
+  box-shadow:
+    0 0 20px rgba(255, 211, 78, 0.9);
+}
+
+
+.glowOrbTwo {
+  width: 8px;
+  height: 8px;
+
+  top: 145px;
+  right: 30px;
+
+  background: #a879ff;
+
+  box-shadow:
+    0 0 18px rgba(168, 121, 255, 0.9);
+}
+
+
+.glowOrbThree {
+  width: 7px;
+  height: 7px;
+
+  bottom: 90px;
+  left: 70px;
+
+  background: #4de1ff;
+
+  box-shadow:
+    0 0 18px rgba(77, 225, 255, 0.8);
+}
+
+
+/* =========================================
+   MAIN ILLUSTRATION
+========================================= */
+
+.illustrationWrapper {
+  position: relative;
+
+  width: min(100%, 560px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+
+.illustration {
+  display: block;
+
+  width: 100%;
+
+  max-width: 560px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(139, 92, 246, 0.28)
+    )
+    drop-shadow(
+      0 0 28px rgba(124, 92, 255, 0.20)
+    )
+    drop-shadow(
+      0 30px 35px rgba(0, 0, 0, 0.28)
+    );
+
+  will-change: transform;
+}
+
+
+/* =========================================
+   TABLET / SMALL DESKTOP
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding: 50px 40px;
+
+    gap: 25px;
+  }
+
+  .illustrationWrapper {
+    width: min(100%, 490px);
+  }
+
+  .illustration {
+    max-width: 490px;
+  }
+
+  .visualGlow {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 55px 30px 20px;
+  }
+
+  .content {
+    margin: 0 auto;
+
+    max-width: 650px;
+  }
+
+  .rewardStats {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .trustText {
+    justify-content: center;
+  }
+
+  .visualWrapper {
+    min-height: 410px;
+
+    margin-top: 5px;
+  }
+
+  .illustrationWrapper {
+    width: min(100%, 540px);
+  }
+
+  .illustration {
+    max-width: 540px;
+  }
+
+  .visualGlow {
+    width: 470px;
+    height: 470px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   FULL PAGE / NO OUTER CARD
+========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    width: 100%;
+
+    padding: 30px 4px 0;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible;
+
+    text-align: center;
+  }
+
+
+  /* =======================================
+     MOBILE BACKGROUND
+  ======================================= */
+
+  .backgroundGlowOne {
+    width: 320px;
+    height: 320px;
+
+    top: -120px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    filter: blur(85px);
+
+    opacity: 0.75;
+  }
+
+
+  .backgroundGlowTwo {
+    width: 280px;
+    height: 280px;
+
+    right: 50%;
+    bottom: 80px;
+
+    transform: translateX(50%);
+
+    filter: blur(95px);
+
+    opacity: 0.55;
+  }
+
+
+  .gridPattern {
+    opacity: 0.14;
+
+    background-size: 34px 34px;
+
+    mask-image:
+      linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+  }
+
+
+  .noise {
+    opacity: 0.015;
+  }
+
+
+  /* =======================================
+     CONTENT
+  ======================================= */
+
+  .content {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 0 4px;
+  }
+
+
+  /* =======================================
+     BADGE
+  ======================================= */
+
+  .badge {
+    margin-bottom: 18px;
+
+    padding: 8px 13px;
+
+    font-size: 0.67rem;
+  }
+
+
+  /* =======================================
+     TITLE
+  ======================================= */
+
+  .title {
+    font-size:
+      clamp(2.65rem, 13vw, 3.8rem);
+
+    line-height: 1.02;
+
+    letter-spacing: -0.06em;
+  }
+
+
+  .title span {
+    margin-top: 6px;
+  }
+
+
+  /* =======================================
+     SUBTITLE
+  ======================================= */
+
+  .subtitle {
+    max-width: 390px;
+
+    margin: 18px auto 24px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+
+    color: rgba(225, 224, 240, 0.68);
+  }
+
+
+  /* =======================================
+     REWARD STATS
+  ======================================= */
+
+  .rewardStats {
+    width: 100%;
+
+    max-width: 390px;
+
+    justify-content: center;
+
+    margin: 0 auto 24px;
+
+    padding: 14px 10px;
+
+    border-radius: 17px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.025)
+      );
+
+    border: 1px solid rgba(255, 255, 255, 0.075);
+
+    box-shadow:
+      0 14px 35px rgba(0, 0, 0, 0.16);
+  }
+
+
+  .rewardStat {
+    gap: 9px;
+
+    text-align: left;
+  }
+
+
+  .statCoin,
+  .statUsers {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    flex: 0 0 42px;
+  }
+
+
+  .statCoin svg,
+  .statUsers svg {
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .rewardStat strong {
+    font-size: 1rem;
+  }
+
+
+  .rewardStat span {
+    max-width: 110px;
+
+    margin-top: 4px;
+
+    font-size: 0.59rem;
+  }
+
+
+  .statDivider {
+    height: 50px;
+
+    margin: 0 8px;
+  }
+
+
+  /* =======================================
+     BUTTONS
+  ======================================= */
+
+  .actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 14px 17px;
+
+    border-radius: 13px;
+
+    font-size: 0.88rem;
+  }
+
+
+  .primaryButton {
+    box-shadow:
+      0 12px 30px rgba(130, 70, 255, 0.24);
+  }
+
+
+  .secondaryButton {
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+
+  /* =======================================
+     TRUST
+  ======================================= */
+
+  .trustText {
+    justify-content: center;
+
+    margin-top: 15px;
+
+    font-size: 0.7rem;
+  }
+
+
+  /* =======================================
+     ILLUSTRATION
+  ======================================= */
+
+  .visualWrapper {
+    width: 100%;
+
+    min-height: auto;
+
+    margin: 12px 0 -5px;
+
+    padding: 0;
+
+    transform: none;
+  }
+
+
+  .illustrationWrapper {
+    width: 100%;
+
+    max-width: 460px;
+
+    margin: 0 auto;
+  }
+
+
+  .illustration {
+    width: 100%;
+
+    max-width: 460px;
+
+    height: auto;
+
+    filter:
+      drop-shadow(
+        0 0 10px rgba(139, 92, 246, 0.26)
+      )
+      drop-shadow(
+        0 0 22px rgba(124, 92, 255, 0.18)
+      )
+      drop-shadow(
+        0 24px 30px rgba(0, 0, 0, 0.25)
+      );
+  }
+
+
+  .visualGlow {
+    width: 370px;
+    height: 370px;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(124, 92, 255, 0.38) 0%,
+        rgba(139, 92, 246, 0.22) 28%,
+        rgba(56, 189, 248, 0.08) 48%,
+        transparent 74%
+      );
+
+    filter: blur(32px);
+
+    opacity: 0.95;
+  }
+
+
+  .visualGlowSecondary {
+    width: 210px;
+    height: 210px;
+
+    right: 5%;
+
+    bottom: 0;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(255, 170, 0, 0.17),
+        rgba(255, 145, 0, 0.07),
+        transparent 72%
+      );
+
+    filter: blur(70px);
+  }
+
+
+  .glowOrbOne {
+    top: 55px;
+    left: 12%;
+  }
+
+
+  .glowOrbTwo {
+    top: 90px;
+    right: 10%;
+  }
+
+
+  .glowOrbThree {
+    bottom: 40px;
+    left: 18%;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 24px;
+  }
+
+
+  .badge {
+    margin-bottom: 16px;
+
+    font-size: 0.63rem;
+  }
+
+
+  .title {
+    font-size:
+      clamp(2.4rem, 14vw, 3.2rem);
+  }
+
+
+  .subtitle {
+    margin-top: 16px;
+
+    font-size: 0.86rem;
+  }
+
+
+  .rewardStats {
+    flex-direction: column;
+
+    gap: 11px;
+
+    max-width: 300px;
+
+    padding: 13px;
+  }
+
+
+  .rewardStat {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+
+  .statDivider {
+    width: 70%;
+
+    height: 1px;
+
+    margin: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.14),
+        transparent
+      );
+  }
+
+
+  .visualWrapper {
+    margin-top: 8px;
+
+    margin-bottom: -2px;
+  }
+
+
+  .illustrationWrapper {
+    max-width: 400px;
+  }
+
+
+  .illustration {
+    max-width: 400px;
+
+    filter:
+      drop-shadow(
+        0 0 9px rgba(139, 92, 246, 0.26)
+      )
+      drop-shadow(
+        0 0 19px rgba(124, 92, 255, 0.18)
+      )
+      drop-shadow(
+        0 20px 27px rgba(0, 0, 0, 0.24)
+      );
+  }
+
+
+  .visualGlow {
+    width: 315px;
+    height: 315px;
+
+    filter: blur(28px);
+  }
+
+
+  .glowOrbOne {
+    left: 8%;
+  }
+
+
+  .glowOrbTwo {
+    right: 6%;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+  .hero {
+    padding-left: 0;
+
+    padding-right: 0;
+  }
+
+
+  .content {
+    padding: 0;
+  }
+
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+
+  .subtitle {
+    padding: 0 4px;
+
+    font-size: 0.82rem;
+  }
+
+
+  .illustrationWrapper {
+    max-width: 360px;
+  }
+
+
+  .illustration {
+    max-width: 360px;
+  }
+
+
+  .visualGlow {
+    width: 280px;
+    height: 280px;
+
+    filter: blur(25px);
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .title span {
+    animation: none;
+  }
+
+  .illustration {
+    animation: none;
+  }
+}

@@ -1,0 +1,1359 @@
+/* ========================================
+   MAIN PANEL
+======================================== */
+
+.panel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: var(--space-lg) 0;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 20, 38, 0.98),
+      rgba(8, 13, 27, 0.99)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.28),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+
+.headerText {
+  min-width: 0;
+  flex: 1;
+}
+
+
+.sectionTitle {
+  margin: 0;
+
+  color: var(--text-dark-primary);
+
+  font-family: var(--font-heading);
+
+  font-size:
+    clamp(1.05rem, 2vw, 1.35rem);
+
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
+}
+
+
+.sectionSubtitle {
+  margin: 5px 0 0;
+
+  color: var(--text-dark-secondary);
+
+  font-size: 0.78rem;
+}
+
+
+/* ========================================
+   HEADER ACTIONS
+======================================== */
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+
+.progressBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  color: #c084fc;
+
+  background:
+    rgba(168, 85, 247, 0.09);
+
+  border:
+    1px solid
+    rgba(168, 85, 247, 0.16);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   VIEW ALL BUTTON
+======================================== */
+
+.viewAllButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 34px;
+  padding: 8px 12px;
+
+  border:
+    1px solid
+    rgba(251, 191, 36, 0.14);
+
+  border-radius: 10px;
+
+  color: #f5c451;
+
+  background:
+    rgba(251, 191, 36, 0.05);
+
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.viewAllButton:hover {
+  color: #ffd76a;
+
+  background:
+    rgba(251, 191, 36, 0.09);
+
+  border-color:
+    rgba(251, 191, 36, 0.24);
+}
+
+
+.viewAllButton svg {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.viewAllButton:hover svg {
+  transform:
+    translateX(3px);
+}
+
+
+/* ========================================
+   PROGRESS GRID
+======================================== */
+
+.progressGrid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 1rem;
+}
+
+
+/* ========================================
+   LEVEL CARD
+======================================== */
+
+.levelCard {
+  position: relative;
+
+  min-height: 190px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 1.2rem;
+
+  overflow: hidden;
+
+  padding: 1.3rem;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(21, 28, 50, 0.95),
+      rgba(13, 18, 34, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.levelCard:hover {
+  border-color:
+    rgba(168, 85, 247, 0.28);
+
+  box-shadow:
+    0 18px 35px
+    rgba(0, 0, 0, 0.22),
+    0 0 30px
+    rgba(168, 85, 247, 0.06);
+}
+
+
+/* ========================================
+   LEVEL GLOW
+======================================== */
+
+.levelGlow {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  left: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.18),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   LEVEL ICON
+======================================== */
+
+.levelIcon {
+  position: relative;
+
+  width: 78px;
+  height: 78px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  color: #b26cff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(168, 85, 247, 0.24),
+      rgba(109, 40, 217, 0.08)
+    );
+
+  border:
+    1px solid
+    rgba(192, 132, 252, 0.22);
+
+  box-shadow:
+    0 0 28px
+    rgba(168, 85, 247, 0.18),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.08);
+}
+
+
+.iconGlow {
+  position: absolute;
+
+  inset: 8px;
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(192, 132, 252, 0.35),
+      transparent 70%
+    );
+
+  filter: blur(8px);
+}
+
+
+/* ========================================
+   LEVEL CONTENT
+======================================== */
+
+.levelContent {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+  min-width: 0;
+}
+
+
+.levelTop {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 0.8rem;
+}
+
+
+.levelLabel {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-dark-muted);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+
+.levelTitle {
+  margin: 0;
+
+  color: var(--text-dark-primary);
+
+  font-family: var(--font-heading);
+
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+
+/* ========================================
+   XP BADGE
+======================================== */
+
+.xpBadge {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px 8px;
+
+  border-radius: 8px;
+
+  color: #c084fc;
+
+  background:
+    rgba(168, 85, 247, 0.09);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   XP TEXT
+======================================== */
+
+.xpText {
+  margin-top: 12px;
+
+  color: var(--text-dark-secondary);
+
+  font-size: 0.78rem;
+}
+
+
+.xpText strong {
+  color: #c084fc;
+
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.progressTrack {
+  position: relative;
+
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+
+  margin-top: 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    inset 0 2px 4px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+.progressFill {
+  position: relative;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #a855f7,
+      #d946ef
+    );
+
+  box-shadow:
+    0 0 16px
+    rgba(168, 85, 247, 0.45);
+}
+
+
+.progressShine {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 80%
+    );
+
+  animation:
+    shine 2.5s infinite;
+}
+
+
+@keyframes shine {
+  from {
+    transform:
+      translateX(-100%);
+  }
+
+  to {
+    transform:
+      translateX(100%);
+  }
+}
+
+
+/* ========================================
+   NEXT LEVEL
+======================================== */
+
+.nextLevel {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 11px;
+
+  color: var(--text-dark-muted);
+
+  font-size: 0.62rem;
+}
+
+
+.nextLevel strong {
+  color: var(--text-dark-secondary);
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   REWARD CARD
+======================================== */
+
+.rewardCard {
+  position: relative;
+
+  min-height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.7rem;
+
+  overflow: hidden;
+
+  padding: 1.3rem;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(25, 28, 52, 0.98),
+      rgba(20, 19, 39, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.rewardCard:hover {
+  border-color:
+    rgba(251, 191, 36, 0.22);
+
+  box-shadow:
+    0 18px 38px
+    rgba(0, 0, 0, 0.24),
+    0 0 32px
+    rgba(251, 191, 36, 0.05);
+}
+
+
+/* ========================================
+   REWARD GLOW
+======================================== */
+
+.rewardGlow {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  right: -120px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(251, 191, 36, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   REWARD CONTENT
+======================================== */
+
+.rewardContent {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: calc(100% - 125px);
+
+  min-width: 0;
+}
+
+
+.rewardHeading {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #fbbf24;
+}
+
+
+.rewardHeading h4 {
+  margin: 0;
+
+  color: var(--text-dark-primary);
+
+  font-family: var(--font-heading);
+
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+
+.rewardContent p {
+  margin: 10px 0 14px;
+
+  color: var(--text-dark-secondary);
+
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   REWARD AMOUNT
+======================================== */
+
+.rewardAmount {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 8px 11px;
+
+  border-radius: 10px;
+
+  color: #fbbf24;
+
+  background:
+    rgba(251, 191, 36, 0.09);
+
+  border:
+    1px solid
+    rgba(251, 191, 36, 0.16);
+
+  font-size: 0.75rem;
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px
+    rgba(251, 191, 36, 0.06);
+}
+
+
+.rewardProgressText {
+  margin-top: 10px;
+
+  color: var(--text-dark-muted);
+
+  font-size: 0.58rem;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   EARN REWARDS ILLUSTRATION
+======================================== */
+
+.rewardIllustration {
+  position: relative;
+
+  width: 125px;
+  height: 125px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  margin-right: -4px;
+}
+
+
+.rewardIllustration::before {
+  content: '';
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(251, 191, 36, 0.16),
+      transparent 70%
+    );
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+
+.rewardImage {
+  position: relative;
+
+  width: 125px;
+  height: 125px;
+
+  object-fit: contain;
+
+  display: block;
+
+  z-index: 2;
+
+  filter:
+    drop-shadow(
+      0 12px 24px
+      rgba(251, 191, 36, 0.16)
+    );
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.loadingGrid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 1rem;
+}
+
+
+.skeletonCard {
+  height: 190px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  background-size: 200% 100%;
+
+  animation:
+    shimmer 1.5s infinite;
+}
+
+
+@keyframes shimmer {
+  from {
+    background-position:
+      200% 0;
+  }
+
+  to {
+    background-position:
+      -200% 0;
+  }
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.errorState {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 160px;
+
+  border-radius: 16px;
+
+  color: var(--text-dark-secondary);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .progressGrid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .levelCard,
+  .rewardCard {
+    min-height:
+      180px;
+  }
+
+  .rewardContent {
+    max-width:
+      calc(100% - 130px);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 560px) {
+
+  .panel {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 24px 0;
+
+    overflow: visible;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+  }
+
+
+  /* ----------------------------------------
+     HEADER
+  ---------------------------------------- */
+
+  .header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin-bottom: 17px;
+
+    padding: 0 2px;
+  }
+
+
+  .headerText {
+    width: 100%;
+  }
+
+
+  .sectionTitle {
+    font-size:
+      1.22rem;
+  }
+
+
+  .sectionSubtitle {
+    margin-top: 5px;
+
+    font-size: 0.73rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* ----------------------------------------
+     HEADER ACTIONS
+  ---------------------------------------- */
+
+  .headerActions {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 8px;
+  }
+
+
+  .progressBadge {
+    padding: 7px 10px;
+
+    font-size: 0.65rem;
+  }
+
+
+  .viewAllButton {
+    min-height: 33px;
+
+    padding: 7px 10px;
+
+    font-size: 0.67rem;
+  }
+
+
+  /* ----------------------------------------
+     PROGRESS GRID
+  ---------------------------------------- */
+
+  .progressGrid {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+  }
+
+
+  /* ----------------------------------------
+     LEVEL CARD
+  ---------------------------------------- */
+
+  .levelCard {
+    min-height: 0;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(18, 24, 45, 0.9),
+        rgba(10, 15, 30, 0.95)
+      );
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.065);
+
+    box-shadow:
+      0 12px 28px
+      rgba(0, 0, 0, 0.15);
+  }
+
+
+  .levelGlow {
+    width: 180px;
+    height: 180px;
+
+    left: -90px;
+    top: -90px;
+
+    opacity: 0.75;
+  }
+
+
+  .levelIcon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 18px;
+  }
+
+
+  .levelIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .levelTop {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 6px;
+  }
+
+
+  .levelLabel {
+    margin-bottom: 3px;
+
+    font-size: 0.53rem;
+  }
+
+
+  .levelTitle {
+    font-size: 1.08rem;
+  }
+
+
+  .xpBadge {
+    padding: 5px 8px;
+
+    font-size: 0.55rem;
+  }
+
+
+  .xpText {
+    margin-top: 9px;
+
+    font-size: 0.71rem;
+  }
+
+
+  .xpText strong {
+    font-size: 0.83rem;
+  }
+
+
+  .progressTrack {
+    height: 7px;
+
+    margin-top: 9px;
+  }
+
+
+  .nextLevel {
+    margin-top: 9px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+
+    font-size: 0.57rem;
+  }
+
+
+  /* ----------------------------------------
+     REWARD CARD
+  ---------------------------------------- */
+
+  .rewardCard {
+    min-height: 166px;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(24, 27, 48, 0.92),
+        rgba(17, 17, 34, 0.95)
+      );
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.065);
+
+    box-shadow:
+      0 12px 28px
+      rgba(0, 0, 0, 0.15);
+
+    gap: 4px;
+  }
+
+
+  .rewardGlow {
+    width: 210px;
+    height: 210px;
+
+    right: -105px;
+    bottom: -125px;
+  }
+
+
+  .rewardContent {
+    max-width:
+      calc(100% - 94px);
+  }
+
+
+  .rewardHeading {
+    gap: 6px;
+  }
+
+
+  .rewardHeading svg {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .rewardHeading h4 {
+    font-size: 0.96rem;
+  }
+
+
+  .rewardContent p {
+    margin: 8px 0 11px;
+
+    font-size: 0.67rem;
+
+    line-height: 1.55;
+  }
+
+
+  .rewardAmount {
+    padding: 7px 9px;
+
+    border-radius: 9px;
+
+    font-size: 0.67rem;
+  }
+
+
+  .rewardAmount svg {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .rewardProgressText {
+    margin-top: 8px;
+
+    font-size: 0.53rem;
+  }
+
+
+  /* ----------------------------------------
+     EARN REWARDS IMAGE
+  ---------------------------------------- */
+
+  .rewardIllustration {
+    width: 92px;
+    height: 92px;
+
+    margin-right: -2px;
+  }
+
+
+  .rewardIllustration::before {
+    width: 78px;
+    height: 78px;
+  }
+
+
+  .rewardImage {
+    width: 88px;
+    height: 88px;
+  }
+
+
+  /* ----------------------------------------
+     LOADING
+  ---------------------------------------- */
+
+  .loadingGrid {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+  }
+
+
+  .skeletonCard {
+    height: 160px;
+
+    border-radius: 16px;
+  }
+
+
+  /* ----------------------------------------
+     ERROR
+  ---------------------------------------- */
+
+  .errorState {
+    min-height: 125px;
+
+    border-radius: 14px;
+
+    font-size: 0.74rem;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .panel {
+    padding: 20px 0;
+  }
+
+
+  .sectionTitle {
+    font-size: 1.08rem;
+  }
+
+
+  .sectionSubtitle {
+    font-size: 0.69rem;
+  }
+
+
+  .headerActions {
+    gap: 6px;
+  }
+
+
+  .progressBadge {
+    padding: 6px 8px;
+
+    font-size: 0.59rem;
+  }
+
+
+  .viewAllButton {
+    padding: 7px 9px;
+
+    font-size: 0.61rem;
+
+    gap: 5px;
+  }
+
+
+  .viewAllButton svg {
+    width: 13px;
+    height: 13px;
+  }
+
+
+  /* ----------------------------------------
+     LEVEL CARD
+  ---------------------------------------- */
+
+  .levelCard {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 13px;
+  }
+
+
+  .levelContent {
+    width: 100%;
+  }
+
+
+  .levelIcon {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 17px;
+  }
+
+
+  .levelIcon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+
+  /* ----------------------------------------
+     REWARD CARD
+  ---------------------------------------- */
+
+  .rewardCard {
+    min-height: 158px;
+
+    padding: 13px;
+  }
+
+
+  .rewardContent {
+    max-width:
+      calc(100% - 82px);
+  }
+
+
+  .rewardIllustration {
+    width: 78px;
+    height: 78px;
+  }
+
+
+  .rewardIllustration::before {
+    width: 66px;
+    height: 66px;
+  }
+
+
+  .rewardImage {
+    width: 74px;
+    height: 74px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .progressShine,
+  .skeletonCard {
+    animation: none;
+  }
+}
