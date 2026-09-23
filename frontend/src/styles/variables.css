@@ -236,11 +236,12 @@
 
 
   /* ============================================
-     TYPOGRAPHY
-     ============================================ */
+   TYPOGRAPHY
+   ============================================ */
 
-  --font-heading: 'Sora', sans-serif;
-  --font-body: 'Inter', sans-serif;
+--font-heading: 'Sora Variable', sans-serif;
+
+--font-body: 'Inter Variable', sans-serif;
 
   --fs-display:
     clamp(2.6rem, 6vw, 4.5rem);
