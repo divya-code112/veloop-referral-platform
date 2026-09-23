@@ -46,7 +46,8 @@ function RewardVisual() {
           alt="Refer and earn rewards"
           className={styles.illustration}
           width="500"
-          height="500"
+          height="370"
+          fetchPriority="high"
           decoding="async"
           animate={{
             y: [0, -8, 0],
